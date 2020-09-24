@@ -1,0 +1,10 @@
+{
+    "name": "wetube",
+    "version": "1.0.0",
+    "description": "Cloning Youtube with Valnila and NodeJS",
+    "main": "index.js",
+    "author": "Brian",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
