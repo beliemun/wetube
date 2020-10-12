@@ -11,6 +11,7 @@ const USER_DETAIL = "/:id"; // 텍스트가 아닌 변수화 -> user/1;
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
+
 // Videos
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
@@ -26,9 +27,9 @@ const routes = {
     search: SEARCH,
 
     users: USERS,
-    userDetail: USER_DETAIL,
     editProfile: EDIT_PROFILE,
     changePassword: CHANGE_PASSWORD,
+    userDetail: USER_DETAIL,
 
     vidoes: VIDEOS,
     upload: UPLOAD,
