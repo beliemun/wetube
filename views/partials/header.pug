@@ -1,9 +1,11 @@
 header.header
-    .header__column
-        i.fab.fa-youtube
+    //- .만 쓰면 기본적으로 div로 생성이 됨
+    .header__column 
+        a(href=routes.home)
+            i.fab.fa-youtube
     .header__column
         ul
             li
-                a(href="#") Join
+                a(href=routes.join) Join
             li
-                a(href="#") Log In
+                a(href=routes.login) Log In
