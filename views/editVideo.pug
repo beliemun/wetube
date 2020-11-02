@@ -1,4 +1,8 @@
 extends layouts/main
 
 block content
-    h1 Edit Vedio
+    form(action=routes.upload method="post")
+        input(type="text" name="name" placeholder="Title")
+        input(type="text" name="description" placeholder="Description")
+        input(type="submit" value="Update Video")
+    a.form-container__link(href=routes.deleteVideo) Delete Video
