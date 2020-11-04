@@ -16,7 +16,7 @@ import routes from "./routes";
 const app = express();
 
 app.use(helmet()); // 보안 미들웨어
-app.set("view engine", "pug");
+app.set("view engine", "pug"); // 이 설정을 하면 render함수가 /view에서 pug파일을 찾을 수 있다.
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
