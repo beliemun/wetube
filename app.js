@@ -25,6 +25,6 @@ app.use(localsMiddleware);
 
 app.use(routes.home, globalRouter); // get이 아니라 use라는 것이 중요! // "/use"에 접근하면 두번째 함수를 실행하겠다는 의미
 app.use(routes.users, userRouter);
-app.use(routes.vidoes, videoRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;

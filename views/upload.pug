@@ -1,9 +1,9 @@
 extends layouts/main
 
 block content
-    form(action=routes.upload method="post")
+    form(action=routes.videos+routes.upload method="post")
         label(for="file") Video File
-        input(type="file" name ="file" id="file")
-        input(type="text" name="name" placeholder="Title")
-        input(type="text" name="description" placeholder="Description")
+        input(type="file" name="file" id="file" required=true)
+        input(type="text" name="title" placeholder="Title" required=true)
+        input(type="text" name="description" placeholder="Description" required=true)
         input(type="submit" value="Upload Video")

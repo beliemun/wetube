@@ -36,7 +36,7 @@ const routes = {
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
 
-  vidoes: VIDEOS,
+  videos: VIDEOS,
   upload: UPLOAD,
   videoDetail: (id) => {
     if (id) {
