@@ -1,7 +1,7 @@
 mixin videoBlock(video = {})
     .videoBlock
         a(href=routes.videoDetail(video.id))
-            video.video__thumnail( controls=true)
-                source(src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4")
+            video.video__thumnail(controls=true width=240 height=140)
+                source(src=video.videoFile type="video/mp4")
             h4.videoBlock__title=video.title
             h6.videoBlock__views=video.views

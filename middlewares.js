@@ -1,4 +1,8 @@
 import routes from "./routes";
+import multer from "multer";
+
+const multerVideo = multer({ dest: "uploads/videos/" }); // 업로드 될 서버 경로
+export const uploadVideo = multerVideo.single("videoFile");
 
 export const localsMiddleware = (req, res, next) => {
   // locals를 이용해 전역 변수를 추가한다.
