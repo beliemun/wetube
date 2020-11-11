@@ -1,5 +1,5 @@
-import routes from "./routes";
 import multer from "multer";
+import routes from "./routes";
 
 const multerVideo = multer({ dest: "uploads/videos/" }); // 업로드 될 서버 경로
 export const uploadVideo = multerVideo.single("videoFile");
