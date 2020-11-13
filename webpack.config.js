@@ -7,10 +7,19 @@ const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
 const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
-  entry: ENTRY_FILE,
+  devtool: "cheap-module-source-map", // 에러나서 추가 됨
+  entry: ["@babel/polyfill", ENTRY_FILE],
   mode: MODE,
   module: {
     rules: [
+      {
+        test: /\.(js)$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+        ],
+      },
       {
         test: /\.(scss)$/,
         use: [
@@ -47,13 +56,7 @@ const config = {
     path: OUTPUT_DIR,
     filename: "[name].js",
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "[name].css",
-    }),
-  ],
+  plugins: [new MiniCssExtractPlugin({ filename: "styles.css" })],
 };
 
 module.exports = config;
