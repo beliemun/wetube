@@ -1,0 +1,34 @@
+.header {
+    width: 100%;
+    background-color: $red;
+    margin-bottom: 50px;
+    .header__wrapper{
+        display: flex;
+        justify-content: space-between;
+        
+        .header__column{
+            i {
+                font-size: 30px;
+                color:white;
+            }
+            &:nth-child(1) {
+                min-width: 15%;
+            }
+            &:nth-child(2) {
+                flex: auto;
+            }
+            &:nth-child(3) {
+                min-width: 15%;
+            }
+            ul {
+                display: flex;
+                color:white;
+                font-weight: 600;
+                text-transform: uppercase;
+                li:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
