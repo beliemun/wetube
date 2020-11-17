@@ -1,26 +1,40 @@
 header.header
     //- .만 쓰면 기본적으로 div로 생성이 됨
     .header__wrapper
-        .header__column 
+        .header__column
+            i.fas.fa-bars
             a(href=routes.home)
                 i.fab.fa-youtube
-                    span WeTube
-                //- i.fas.fa-bars
-                //- img(src="../resources/icon_small.png")
+                span
+                    | WeTube
+
+            //- img(src="icon_small.png")
         .header__column
             form(action=routes.search, method="get")
-                input(text="text" placeholder="Search by term..", name ="term")
+                input(type="text" placeholder="Search by term..", name ="term")
+                button(type="submit")
+                    i.fas.fa-search
         .header__column
             ul
                 if !user.isAuthenticated
                     li
-                        a(href=routes.join) Join
+                        a(href=routes.join) 
+                            i.fas.fa-user-plus
+                            span Join
                     li
-                        a(href=routes.login) Log In
+                        a(href=routes.login) 
+                            i.fas.fa-sign-in-alt
+                            span LogIn
                 else
                     li
-                        a(href=routes.videos+routes.upload) Upload
+                        a(href=routes.videos+routes.upload)
+                            i.fas.fa-video
+                            span Upload
                     li
-                        a(href=routes.userDetail(user.id)) Profile
+                        a(href=routes.userDetail(user.id))
+                            i.fas.fa-user
+                            span Profile
                     li
-                        a(href=routes.logout) Log Out
+                        a(href=routes.logout)
+                            i.fas.fa-sign-out-alt
+                            span Logout

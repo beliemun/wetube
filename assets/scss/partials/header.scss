@@ -1,32 +1,92 @@
 .header {
     width: 100%;
-    background-color: $red;
+    height: 60px;
+    background-color: white;
     margin-bottom: 50px;
     .header__wrapper{
         display: flex;
         justify-content: space-between;
-        
         .header__column{
-            i {
-                font-size: 30px;
-                color:white;
-            }
-            &:nth-child(1) {
-                min-width: 15%;
+            &:first-child {
+                min-width: 200px;
+                max-width: 300px;
+                >i {
+                    font-size: 20px;
+                    width: 60px;
+                    line-height: 60px;
+                    text-align: center;
+                    color:$black;
+                }
+                a {
+                    font-size:20px;
+                    color:$red;
+                    text-decoration: none;
+                    >span {
+                        font-size:16px;
+                        font-weight:bold;
+                        margin-left:5px;
+                        color:$black;
+                    }
+                }
             }
             &:nth-child(2) {
                 flex: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                form {
+                    input {
+                        min-width: 500px;
+                        height: 30px;
+                        padding-left: 10px;
+                        background-color: white;
+                        border: 1px solid $grey;
+                        
+                    }
+                    input::placeholder {
+                        color: $dark-grey;
+                    }
+                    button {
+                        width : 60px;
+                        height : 34px;
+                        background-color: $background;
+                        border: 1px solid $grey;
+                        border-left-width: 0px;
+                        i {
+                            color: $dark-grey;
+                        }
+                    }
+                }
             }
-            &:nth-child(3) {
-                min-width: 15%;
+            &:last-child {
+                min-width: 300px;
+                max-width: 400px;
+                i {
+                    color:$black;
+                    font-size:20px;
+                    line-height: 60px;
+                }
             }
             ul {
                 display: flex;
+                justify-content: flex-end;
                 color:white;
                 font-weight: 600;
                 text-transform: uppercase;
-                li:not(:last-child) {
-                    margin-right: 20px;
+                li {
+                    margin: 0px 20px;
+                    >a {
+                        color:$black;
+                        font-size:14px;
+                        line-height: 60px;
+                        font-weight:bold;
+                        text-decoration:none;
+                        >span {
+                            position: relative;
+                            margin-left: 10px;
+                            top:-2px;
+                        }
+                    }
                 }
             }
         }

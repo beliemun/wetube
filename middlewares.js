@@ -9,7 +9,8 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
   res.locals.user = {
-    isAuthenticated: true,
+    // isAuthenticated: true,
+    isAuthenticated: false,
     id: 1,
   };
   // 정책상 영상을 로드하지 못함
