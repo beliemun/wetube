@@ -2,11 +2,22 @@ extends layouts/main
 include mixins/videoBlock
 
 block content
-    .videos
-        each item in videos
-            +videoBlock({
-                id: item.id,
-                title: item.title,
-                views: item.views,
-                videoFile: item.fileUrl,
-            })
+    .main
+        .channel__img
+            img.channel__header-img(src="/resources/channel_image.jpg")
+        .channel__header
+            img.channel__logo
+            .channel__title 
+                h1.channel__name 노마드 코더 Nomad Coders
+                h5.channel__subscription-count 구독자 21.6만명
+            .channel__subscription-status
+                h5.channel__status-text 구독중
+                i.far.fa-bell
+        .videos
+            each item in videos
+                +videoBlock({
+                    id: item.id,
+                    title: item.title,
+                    views: item.views,
+                    videoFile: item.fileUrl,
+                })

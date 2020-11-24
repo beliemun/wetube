@@ -4,11 +4,8 @@ header.header
         .header__column
             i.fas.fa-bars
             a(href=routes.home)
-                i.fab.fa-youtube
-                span
-                    | WeTube
-                img(src="icon_small.png")
-                //- img(src="http://localhost:4000/resources/icon_small.png")
+                img.header__logo(src='/resources/icon_small.png')
+                span KR
         .header__column
             form(action=routes.search, method="get")
                 input(type="text" placeholder="Search by term..", name ="term")

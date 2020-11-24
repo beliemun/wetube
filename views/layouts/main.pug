@@ -8,8 +8,10 @@ html
     body
         include ../partials/header
         main
-            block content
+            .menu
+                include ../partials/menu
+            .pages
+                block content
         footer
-            span &copy; #{siteName}
         include ../partials/footer
         script(src="static/main.js")
