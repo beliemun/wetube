@@ -1,3 +1,25 @@
 .main {
-  //   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex;
+
+  .channel__header {
+    display: flex;
+    height: 120px;
+    .channel__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 50%;
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+    }
+  }
 }
