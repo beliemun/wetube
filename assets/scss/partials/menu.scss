@@ -1,48 +1,48 @@
 .menu__item {
-  display: flex;
-  i {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    color: $dark-grey;
-    padding: 7px 10px;
-  }
-  span {
-    flex: auto;
-    display: flex;
-    align-items: center;
-    color: black;
-  }
-}
-
-.menu__subcrption {
-  .menu__item {
-    display: flex;
-    align-items: center;
-    img {
-      width: 20px;
-      object-fit: cover;
-      padding: 20px;
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        color: $dark-grey;
+        padding: 7px 10px;
     }
     span {
-      width: 50px;
-      display: block;
-      overflow: hidden; // 넘치는 부분 표시 안함
-      white-space: nowrap; // 공백 입력 무시
-      text-overflow: ellipsis; // 영역 벗어나면 점 표시
+        flex: auto;
+        display: flex;
+        align-items: center;
+        color: black;
     }
-  }
+}
+
+.menu__subcription {
+    .menu__item {
+        display: flex;
+        align-items: center;
+        img {
+            width: 20px;
+            object-fit: cover;
+            padding: 20px;
+        }
+        span {
+            width: 50px;
+            display: block;
+            overflow: hidden; // 넘치는 부분 표시 안함
+            white-space: nowrap; // 공백 입력 무시
+            text-overflow: ellipsis; // 영역 벗어나면 점 표시
+        }
+    }
 }
 
 .seperator {
-  border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $grey;
 }
 
 .menu__title {
-  color: $dark-grey;
-  padding: 20px 20px 10px;
-  font-weight: bold;
+    color: $dark-grey;
+    padding: 20px 20px 10px;
+    font-weight: bold;
 }
