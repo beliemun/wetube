@@ -1,0 +1,165 @@
+--- 1.엑셀 사용하듯이 앱 만들기? No-Code 시대가 온다!
+
+이제 문과생도 노코드 개발자가 될 수 있는건가요? 
+Amazon. MS도 노코드 서비스를 런칭했다는데!?❤️
+-
+📌니콜라스와 코딩 공부하기 
+https://nomadcoders.co 
+-
+노코드 혁명의 모든 것(2020년): https://brunch.co.kr/@lynnata/238
+여행 가이드 앱 (PWA) 코딩 1도 없이 만들기(2019년): https://youtu.be/37NlAOdJ75A
+
+--- 2.IT 다큐멘터리 역대급 띵작 5편 추천
+
+집콕 기간에는 뭐다? 정주행할 수 있는 다큐멘터리 5개 추천해드림. IT. AI. Tech 덕후. 해커. 개발자라면 보시오!
+참참....댓글로 다른 좋은 다큐들도 좀 추천해주세요. 굽신굽신.
+🔥
+1. Pirate Bay Away from Keyboard 
+(더 파이러트 베이: 키보드를 떠나서)
+한줄요약: 개방된 인터넷을 위한 전쟁(!?)
+예고편: https://youtu.be/G6qcJt2NPY8
+-
+2. Citizenfour 
+(시티즌포) 
+한줄요약: 스노든의 미국 감시 프로그램 폭로 과정
+예고편: https://youtu.be/XiGwAvd5mvM
+-
+3. Zerodays
+(제로 데이즈)
+한줄요약: 어떻게 컴퓨터 바이러스가 이란 핵시설을 파괴한건가
+예고편: https://youtu.be/C8lj45IL5J4
+-
+4. The Internet's Own Boy
+(누가 애런 슈워츠를 죽였는가)
+한줄요약: 왜 26살 천재해커는 자살할 수 밖에 없었나
+예고편: https://youtu.be/RvsxnOg0bJY
+
+3. 집콕 기간에는 뭐다? 정주행할 수 있는 다큐멘터리 5개 추천해드림. IT. AI. Tech 덕후. 해커. 개발자라면 보시오!
+참참....댓글로 다른 좋은 다큐들도 좀 추천해주세요. 굽신굽신.
+🔥
+1. Pirate Bay Away from Keyboard 
+(더 파이러트 베이: 키보드를 떠나서)
+한줄요약: 개방된 인터넷을 위한 전쟁(!?)
+예고편: https://youtu.be/G6qcJt2NPY8
+-
+2. Citizenfour 
+(시티즌포) 
+한줄요약: 스노든의 미국 감시 프로그램 폭로 과정
+예고편: https://youtu.be/XiGwAvd5mvM
+-
+3. Zerodays
+(제로 데이즈)
+한줄요약: 어떻게 컴퓨터 바이러스가 이란 핵시설을 파괴한건가
+예고편: https://youtu.be/C8lj45IL5J4
+-
+4. The Internet's Own Boy
+(누가 애런 슈워츠를 죽였는가)
+한줄요약: 왜 26살 천재해커는 자살할 수 밖에 없었나
+예고편: https://youtu.be/RvsxnOg0bJY
+
+---3. 어떤 언어부터 배워야할까? 5개 언어. 5분 개념탑재.
+
+C. Java. Python. JavaScript. PHP
+어떤 언어부터 배워야하는걸까요?
+정말 많은 사람들이 묻고. 또 묻고. 또 묻고. 그래서 만든 영상!
+5대 유명한 프로그래밍 언어를 정리해봤어요~
+-
+#프로그래밍초보 #프로그래밍 #코딩 
+-
+📌 니콜라스와 무료로 파이썬 배우기 
+https://nomadcoders.co/python-for-beg...
+-
+📌 Learn Python for free! 
+https://en.nomadcoders.co/python-for-...
+
+---4. C. C++. C#. 차이점 알려드림. 5분 순삭.
+업데이트가 늦었습니다 ㅠㅠㅠ (결혼 축하해주신 분들 너무 고맙습니다! ;))
+오늘도 코린이. 코알못을 위한 영상을 들고 왔어요!
+아시죠? C는 C++.C# 줄인말이 아니라는거? (껄껄껄) 
+또 궁금한것 있으시면 언제든 댓글로 남겨주세요~
+#코린이 #코알못 #프로그래밍 #코딩 #프로그래밍초보
+-
+📌니콜라스와 코딩 공부하기 
+https://nomadcoders.co 
+-
+📌 Learn to code for free! 
+https://en.nomadcoders.co
+
+---5. 인터넷 익스플로러! 처참한 몰락의 이유는?
+한때 시장 점유율 95%에 달했던 IE는 왜 이모냥이된걸까?
+#인터넷익스플로러 #IE #웹브라우저
+-
+📌 니콜라스와 무.료.로. 코딩 공부하기 
+https://nomadcoders.co
+-
+📌 Learn to code for free! 
+https://en.nomadcoders.co/
+
+--6. 트레이딩 봇을 만들고 100만원을 넣었다.
+자동매매 봇! 파이썬으로 하루만에 만들기. 절대적인 규칙을 적용해보았다.무릎에서 사서. 어깨에서 판다-! 
+#코알못 #주린이 #트레이딩봇 #가즈아 #gazua
+-
+📌니콜라스와 무료로 파이썬 공부하기 
+ https://nomadcoders.co/python-for-beg...
+-
+📌 Learn Python for free! 
+https://en.nomadcoders.co/python-for-...
+
+--7. 인스타그램 봇을 만들고 24시간 돌려보았다
+인스타 봇으로 팔로워를 늘릴 수 있을까?
+파이썬 자동화로 인스타 좋아요를 누르고, 댓글 쓰는 봇을 만들었습니다! 24시간후 팔로워가 얼마나 늘었을까요? ㅎㅎㅎ 댕댕이 인스타 계정은 여기 아래 링크 클릭 👇🏼
+#인스타그램 #파이썬 #자동화 #인스타봇 #코딩 
+-
+🌴 노마드 굿즈 GET 하기 
+https://nomadcoders.co/shop
+-
+📌 니콜라스와 무료로 파이썬 배우기 
+https://nomadcoders.co/python-for-beg...
+-
+📌 Learn Python for free! 
+https://en.nomadcoders.co/python-for-...
+-
+🌴 댕댕이 인스타 계정 
+https://www.instagram.com/jia.beagle/
+
+8. 누워서 말로 코딩하는 웹사이트를 만들었다.
+일명 핸즈프리 코딩!
+다들 터널증후군 조심하세요 ....따흑.
+#자바스크립트 #음성인식 #터널증후군
+-
+📌 니콜라스와 무료로 바닐라 JS 공부하기 
+https://nomadcoders.co/javascript-for...
+.
+📌 Learn Vanilla JS for free! 
+https://en.nomadcoders.co/javascript-...
+-
+목소리로 코딩 하기 (Voice to Code Website)
+📌데모(Demo): 
+https://h97yb.csb.app/
+-
+📌소스코드 (Source Code): 
+https://codesandbox.io/s/h97yb
+
+--9. 민트 초코 논란! 자연어 처리(NLP)로 종결해드림.
+트위터 감정분석을 구글 자연어 처리 (NLP) API 로 해보았다.
+민트초코는 과연 치약맛 인가.
+하와이안 피자는 과연 피자에 대한 무례함인가.
+그 결과는!?
+#민초단 #파이썬 #자연어처리
+-
+📌 니콜라스와 무료로 파이썬 공부하기 
+https://nomadcoders.co/python-for-beg...
+-
+📌 Learn Python for free! 
+https://en.nomadcoders.co/python-for-...
+
+--10. 노마드 코더 Nomad Coders
+다들 이렇게 지내잖아요....(응?)
+재택근무하는 풀스택 개발자. 니꼴라스의 브이로그 입니다.  
+#재택근무 #개발자 #풀스택 #브이로그 #댕댕이 #댕줍 #헬창 #헬린이 #1일1식
+-
+📌 니콜라스와 무료로 코딩 공부하기 
+https://nomadcoders.co 
+-
+📌 Learn to code for free! 
+https://en.nomadcoders.co

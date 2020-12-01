@@ -2,8 +2,8 @@ extends layouts/main
 
 block content
     .video__player
-        video(controls=true width="50%")
-            source(src=`/${video.fileUrl}` type="video/mp4")
+        video(controls=true width="800px" poster=video.posterFile autoplay)
+            source(src=`/${video.videoFileUrl}` type="video/mp4")
     .video__info
         a(href=routes.editVideo(video.id)) Edit Video
         h5.video__title=video.title

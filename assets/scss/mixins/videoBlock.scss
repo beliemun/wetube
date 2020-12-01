@@ -1,0 +1,40 @@
+.videoBlock {
+  position: relative;
+  margin-right: 10px;
+  a {
+    div.video__thumnail--curtain {
+      position: absolute;
+      width: 240px;
+      height: 140px;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      i {
+        // position: absolute;
+        font-size: 50px;
+        z-index: 2;
+        color: rgb(255, 255, 255, 0.8);
+      }
+    }
+    .video__thumnail {
+      position: relative;
+      margin-bottom: 5px;
+      object-fit: cover;
+    }
+    .videoBlock__title {
+      font-size: 15px;
+      color: black;
+      margin-bottom: 10px;
+
+      max-width: 240px;
+      line-height: 18px;
+      // height: 20px;
+
+      // overflow: hidden; // 넘치는 부분 표시 안함
+      // white-space: nowrap; // 공백 입력 무시
+      // text-overflow: ellipsis; // 영역 벗어나면 점 표시
+    }
+  }
+  .videoBlock__views {
+    font-size: 13px;
+  }
+}

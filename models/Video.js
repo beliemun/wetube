@@ -1,9 +1,13 @@
 import mongoose from "mongoose";
 
 const VideoSchema = new mongoose.Schema({
-  fileUrl: {
+  videoFileUrl: {
     type: String,
-    required: "File URL is required", // fileURL값이 없는 Video를 생성하려할 때 이 경고를 받음.
+    required: "Video file URL is required", // fileURL값이 없는 Video를 생성하려할 때 이 경고를 받음.
+  },
+  posterFileUrl: {
+    type: String,
+    required: "Poster file URL is required",
   },
   title: {
     type: String,
