@@ -1,6 +1,8 @@
 .videoBlock {
   position: relative;
+  padding: 5px 0;
   margin-right: 10px;
+  margin-bottom: 10px;
   a {
     div.video__thumnail--curtain {
       position: absolute;
@@ -8,11 +10,14 @@
       height: 140px;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
       i {
-        // position: absolute;
         font-size: 50px;
         z-index: 2;
-        color: rgb(255, 255, 255, 0.8);
+        color: rgb(255, 255, 255, 0.7);
       }
     }
     .video__thumnail {

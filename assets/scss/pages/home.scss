@@ -66,6 +66,7 @@
       }
       .home-videos__list {
         display: flex;
+        flex-wrap: wrap;
       }
     }
   }
