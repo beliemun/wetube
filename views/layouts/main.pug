@@ -1,18 +1,18 @@
 doctype html
 html
-    head
-        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
-        title #{pageTitle} | #{siteName}
-        link(rel="stylesheet" href="/static/styles.css")
-        link(rel="shortcut icon" href="https://www.youtube.com/s/desktop/ba104690/img/favicon.ico" type="image/x-icon")
-    body
-        include ../partials/header
-        main
-            .menu
-                include ../partials/menu
-            .pages
-                block content
-        footer
-        include ../partials/footer
-        script(src="/static/main.js")
-        script(src="/static/init.js")
+  head
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
+    title #{pageTitle} | #{siteName}
+    link(rel="stylesheet" href="/static/styles.css")
+    link(rel="shortcut icon" href="https://www.youtube.com/s/desktop/ba104690/img/favicon.ico" type="image/x-icon")
+  body
+    include ../partials/header
+    main
+      .menu
+        include ../partials/menu
+      .pages
+        block content
+    footer
+    include ../partials/footer
+    script(src="/static/main.js")
+    script(src="/static/init.js")
