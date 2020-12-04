@@ -3,6 +3,9 @@ extends layouts/main
 block content
     .form__container
         img.header__logo(src='/resources/icon_big.png')
+        .heaer__title
+            i.fas.fa-sign-in-alt
+            span Welcom to NicoTube
         form(action=routes.login, method="post")
             input(type="email" name="email" placeholder="Email")
             input(type="password" name="password" placeholder="Password")

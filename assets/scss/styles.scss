@@ -3,6 +3,7 @@
 
 @import "mixins/videoBlock.scss";
 
+@import "partials/button.scss";
 @import "partials/footer.scss";
 @import "partials/form.scss";
 @import "partials/header.scss";
@@ -10,6 +11,6 @@
 @import "partials/socialLogin.scss";
 
 @import "pages/home.scss";
-@import "pages/join.scss";
+@import "pages/userDetail.scss";
 
 @import "main.scss";

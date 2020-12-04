@@ -1,4 +1,27 @@
 extends layouts/main
 
 block content
-    h1 User Detail
+    .user-profile__container
+        .user-profile__title
+            i.fas.fa-id-badge
+            span My Profile
+        .user-profile__card    
+            .user-profile__info-container
+                img.user-profile__avatar(src="/resources/avatar.jpg")
+                .user-profile__info
+                    span.user-profile__tag Name
+                    span.user-profile__name KIM-JINHWAN
+                    .user-profile__ids
+                        span.user-profile__tag Username : 
+                        span.user-profile__id @beliemun
+                    .user-profile__ids
+                        span.user-profile__tag Github : 
+                        span.user-profile__id @beliemun
+                    .user-profile__ids
+                        span.user-profile__tag Email : 
+                        span.user-profile__id beliemun@paran.com
+            .user-profile-btns
+                .user-profile__change-avatar.btn.btn--outline Change Photo
+                .user-profile__edit-profile.btn.btn--color Edit Profile
+
+

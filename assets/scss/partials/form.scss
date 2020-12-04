@@ -1,35 +1,81 @@
 .form__container {
-    width:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  .header__logo {
+    width: 300px;
+  }
+  .heaer__title {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+    i {
+      color: $black;
+      position: relative;
+      top: 2px;
+      font-size: 18px;
+    }
+    span {
+      color: $black;
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        width: 100%;
-        max-width:320px;
-        margin-bottom: 25px;
-        input {
-            display: block;
-            width:100%;
-            margin-bottom: 25px;
-            padding:8px 12px;
-            font-size:14px;
-            color: $black;
-            font-weight: 600;
-            border : 1px solid $grey;
-            border-radius: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05);
-            &::placeholder {
-                font-weight: 300;
-                color:$dark-grey;
-            }
-            &[type="submit"] {
-                color:white;
-                background-color: $dark-red;
-            }
-        }
+
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 10px;
+    .space {
+      height: 20px;
     }
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: $black;
+      font-weight: 600;
+      border: 0px solid $grey;
+      border-radius: 15px;
+      border-bottom-right-radius: 0px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+      &::placeholder {
+        font-weight: 300;
+        color: $grey;
+      }
+      &[type="submit"] {
+        color: white;
+        background-color: $dark-red;
+        font-size: 16px;
+        padding: 15px;
+        border-radius: 15px;
+        border-bottom-right-radius: 0px;
+        text-align: center;
+        cursor: pointer;
+      }
+      &[type="file"] {
+        box-shadow: none;
+        color: $dark-red;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+      }
+      &:focus {
+        border: 3px solid rgba(255, 0, 0, 0.2);
+      }
+    }
+    label {
+      align-self: start;
+      margin-bottom: 5px;
+      color: $dark-grey;
+      font-size: 12px;
+    }
+  }
 }

@@ -9,13 +9,12 @@ export const uploadVideo = multerVideo.fields([
 
 export const localsMiddleware = (req, res, next) => {
   // locals를 이용해 전역 변수를 추가한다.
-  res.locals.siteName = "WeTube";
+  res.locals.siteName = "NicoTube";
   res.locals.routes = routes;
   res.locals.user = {
-    isAuthenticated: true,
-    // isAuthenticated: false,
+    // isAuthenticated: true,
+    isAuthenticated: false,
     id: 1,
-    subscribeStatus: false,
   };
   // 정책상 영상을 로드하지 못함
   res.setHeader(

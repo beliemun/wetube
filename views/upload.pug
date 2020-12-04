@@ -1,10 +1,17 @@
 extends layouts/main
 
 block content
-    form(action=routes.videos+routes.upload method="post" enctype="multipart/form-data")
-        label(for="file") Video File
-        input(type="file" name="videoFile" id="videoFile" required=true, accept="video/*")
-        input(type="file" name="posterFile" id="posterFile" accept="image/*")
-        input(type="text" name="title" placeholder="Title" required=true)
-        input(type="text" name="description" placeholder="Description" required=true)
-        input(type="submit" value="Upload Video")
+    .form__container
+        .heaer__title   
+            i.fas.fa-video
+            span Upload a new video
+        form(action=routes.videos+routes.upload method="post" enctype="multipart/form-data")
+            input(type="text" name="title" placeholder="Title" required=true)
+            input(type="text" name="description" placeholder="Description" required=true)
+            .space 
+            label(for="videoFile") Add Video File
+            input(type="file" name="videoFile" id="videoFile" required=true, accept="video/*")
+            label(for="posterFile") Add Thumnail Image
+            input(type="file" name="posterFile" id="posterFile" accept="image/*")
+            .space
+            input(type="submit" value="Upload Video")
