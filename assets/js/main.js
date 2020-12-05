@@ -1,5 +1,4 @@
 import "../scss/styles.scss";
 
-const something = async () => {
-  console.log("something");
-};
+const element = document.querySelector(".home-menu__home");
+if (element) element.focus();

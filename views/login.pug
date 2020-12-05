@@ -7,7 +7,9 @@ block content
             i.fas.fa-sign-in-alt
             span Welcom to NicoTube
         form(action=routes.login, method="post")
-            input(type="email" name="email" placeholder="Email")
-            input(type="password" name="password" placeholder="Password")
+            label(for="email") Email
+            input(type="email" name="email" placeholder="Write here..")
+            label(for="password") Password
+            input(type="password" name="password" placeholder="Write here..")
             input(type="submit" value="Log In")
         include partials/socialLogin

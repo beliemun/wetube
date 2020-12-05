@@ -1,8 +1,14 @@
 extends layouts/main
 
 block content
-    form(action=routes.editVideo(video.id) method="post")
-        input(type="text" name="title" placeholder="Title" value=video.title)
-        input(type="text" name="description" placeholder="Description" value=video.description)
-        input(type="submit" value="Update Video")
-    a.form-container__link(href=routes.deleteVideo(video.id)) Delete Video
+    .form__container
+        .heaer__title   
+            i.fas.fa-video
+            span Edit your video
+        form(action=routes.editVideo(video.id) method="post")
+            label(for="title") Title
+            input(type="text" name="title" placeholder="Write here.." value=video.title required=true)
+            label(for="description") Description
+            textarea(name="description" placeholder="Write here.." required=true)=video.description
+            input(type="submit" value="Update Video")
+        a.form-container__link(href=routes.deleteVideo(video.id)) Delete Video

@@ -1,16 +1,17 @@
+// config
 @import "config/_variables.scss";
 @import "config/reset.scss";
-
+// partials
 @import "mixins/videoBlock.scss";
-
 @import "partials/button.scss";
 @import "partials/footer.scss";
 @import "partials/form.scss";
 @import "partials/header.scss";
-@import "partials/menu.scss";
+@import "partials/homeMenu.scss";
 @import "partials/socialLogin.scss";
-
+//pages
 @import "pages/home.scss";
 @import "pages/userDetail.scss";
-
+@import "pages/videoDetail.scss";
+//main
 @import "main.scss";

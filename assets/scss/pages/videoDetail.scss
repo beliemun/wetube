@@ -1,0 +1,65 @@
+.main {
+    display: flex;
+    .video__container {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 100vh;
+        .video__info {
+            .video__title {
+                font-size: 20px;
+                color: black;
+                margin: 25px 0px 20px;
+            }
+            .video__menu {
+                display: flex;
+                .video__edit-btn {
+                    position: relative;
+                    top: -10px;
+                    padding: 10px;
+                    font-size: 12px;
+                    margin-left: 10px;
+                    ;
+                }
+            }
+            .video__description {
+                margin-top: 15px;
+            }
+        }
+    }
+    .comment__container {
+        width: 400px;
+        padding: 10px;
+        box-sizing: border-box;
+        .video__comment-number {
+            color: $dark-red;
+            font-size: 13px;
+            margin: 0px 10px 10px;
+            display: block;
+        }
+        .comment__form {
+            display: flex;
+            .comment__input {
+                flex: auto;
+                border: 2px solid $grey;
+                border-radius: 20px;
+                padding: 10px 15px;
+                font-size: 14px;
+                transition: all 0.3s ease-in-out;
+                color: $dark-grey;
+                font-weight: 600;
+                ;
+                &:hover {
+                    border: 2px solid $dark-grey;
+                }
+            }
+            .comment__submit {
+                padding: 10px;
+                font-size: 14px;
+                margin-left: 10px;
+                border: 0px;
+            }
+        }
+    }
+}

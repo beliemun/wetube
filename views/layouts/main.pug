@@ -8,11 +8,5 @@ html
   body
     include ../partials/header
     main
-      .menu
-        include ../partials/menu
-      .pages
-        block content
-    footer
-    include ../partials/footer
+      block content
     script(src="/static/main.js")
-    script(src="/static/init.js")

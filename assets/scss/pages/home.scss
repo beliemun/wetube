@@ -1,73 +1,82 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex;
-  .home-header__container {
+.home__container {
+    width: 100%;
     display: flex;
-    align-items: center;
-    height: 120px;
-    .home-header__logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 70px;
-      height: 70px;
-      background-color: white;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 50%;
-      img {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
-      }
+    .home__menu {
+        width: 240px;
+        background-color: white;
     }
-    .home-header__name {
-      color: black;
-      font-size: 24px;
-      margin-right: 20px;
-    }
-    .home-header__subscription-count {
-      color: $dark-grey;
-      padding-top: 8px;
-    }
-    .home-header__subscription-status {
-      display: flex;
-      color: $dark-grey;
-      background-color: $grey;
-      padding: 15px;
-      i {
-        font-size: 18px;
-        margin-right: 5px;
-      }
-    }
-  }
-  .home-menu {
-    padding: 0px 20px;
-    a {
-      display: inline-block;
-      width: 100px;
-      line-height: 40px;
-      text-align: center;
-      padding: 0px;
-    }
-    a:focus {
-      color: $dark-grey;
-      border-bottom: 3px solid #7c7c7c;
-    }
-  }
-  .home-videos {
-    padding: 30px 50px;
-    background-color: #f6f6f6;
-    .home-videos__latest {
-      .home-videos__title h2 {
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-      .home-videos__list {
+    .home__content {
+        flex: auto;
         display: flex;
-        flex-wrap: wrap;
-      }
+        flex-direction: column;
+        align-items: flex;
+        .home-header__container {
+            display: flex;
+            align-items: center;
+            height: 120px;
+            .home-header__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70px;
+                height: 70px;
+                background-color: white;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 50%;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                }
+            }
+            .home-header__name {
+                color: black;
+                font-size: 24px;
+                margin-right: 20px;
+            }
+            .home-header__subscription-count {
+                color: $dark-grey;
+                padding-top: 8px;
+            }
+            .home-header__subscription-status {
+                display: flex;
+                color: $dark-grey;
+                background-color: $grey;
+                padding: 15px;
+                i {
+                    font-size: 18px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .home-menu {
+            padding: 0px 20px;
+            a {
+                display: inline-block;
+                width: 100px;
+                line-height: 40px;
+                text-align: center;
+                padding: 0px;
+            }
+            a:focus {
+                color: $dark-grey;
+                border-bottom: 3px solid #7c7c7c;
+            }
+        }
+        .home-videos {
+            padding: 30px 50px;
+            background-color: #f6f6f6;
+            .home-videos__latest {
+                .home-videos__title h2 {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                .home-videos__list {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
     }
-  }
 }
