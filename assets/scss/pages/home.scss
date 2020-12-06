@@ -3,6 +3,7 @@
     display: flex;
     .home__menu {
         width: 240px;
+        min-width: 240px;
         background-color: white;
     }
     .home__content {

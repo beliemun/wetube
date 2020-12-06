@@ -12,7 +12,7 @@ header.header
                     i.fas.fa-search
         .header__column
             ul
-                if !user.isAuthenticated
+                if !user
                     li
                         a(href=routes.join) 
                             i.fas.fa-user-plus
