@@ -7,19 +7,16 @@ block content
             span My Profile
         .user-profile__card    
             .user-profile__info-container
-                img.user-profile__avatar(src="/resources/avatar.jpg")
+                img.user-profile__avatar(src=user.avatarUrl)
                 .user-profile__info
-                    span.user-profile__tag Name
-                    span.user-profile__name KIM-JINHWAN
-                    .user-profile__ids
-                        span.user-profile__tag Username : 
-                        span.user-profile__id @beliemun
+                    span.user-profile__tag Name 
+                    span.user-profile__name #{user.name}
                     .user-profile__ids
                         span.user-profile__tag Github : 
-                        span.user-profile__id @beliemun
+                        span.user-profile__id @#{user.githubId}
                     .user-profile__ids
                         span.user-profile__tag Email : 
-                        span.user-profile__id beliemun@paran.com
+                        span.user-profile__id #{user.email}
             .user-profile-btns
                 .user-profile__change-avatar.btn.btn--color Change Photo
                 .user-profile__edit-profile.btn.btn--outline Edit Profile
