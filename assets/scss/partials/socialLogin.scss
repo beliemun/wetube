@@ -22,9 +22,20 @@
         color: white;
         background-color: $black;
         margin-bottom: 20px;
+        transition: all 0.1s ease-in-out;
+    }
+    .social-login__github:hover {
+        background-color: #e67e22;
+        transform: scale(0.97)
     }
     .social-login__kakao {
         color: #1E1E1E;
         background-color: #ffcd00;
+        transition: all 0.1s ease-in-out;
+    }
+    .social-login__kakao:hover {
+        color: white;
+        background-color: #e67e22;
+        transform: scale(0.97)
     }
 }

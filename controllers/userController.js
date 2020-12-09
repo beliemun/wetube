@@ -131,7 +131,7 @@ export const logout = (req, res) => {
     res.redirect(routes.home);
 };
 
-export const getMe = (req, res) => {
+export const getMyPofile = (req, res) => {
     res.render("userDetail", { pageTitle: "My Profile", user: req.user });
 };
 
@@ -139,15 +139,20 @@ export const userDetail = async(req, res) => {
     const {
         params: { id },
     } = req;
+    console.log("1");
     try {
-        const user = await User.findById(id);
+        console.log("2");
+        const user = await User.findById(id).populate("videos");
         res.render("userDetail", { pageTitle: "Detail", user });
     } catch (error) {
+        console.log("3");
         res.redirect(routes.home);
     }
 };
 
-export const editProfile = (req, res) =>
+export const getEditProfile = (req, res) => {
     res.render("editProfile", { pageTitle: "Edit Profile" });
+}
+
 export const changePassword = (req, res) =>
     res.render("changePassword", { pageTitle: "Change Password" });

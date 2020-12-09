@@ -11,7 +11,7 @@ import {
     postGithubLogin,
     kakaoLogin,
     postKakaoLogin,
-    getMe,
+    getMyPofile,
 } from "../controllers/userController";
 import routes from "../routes";
 import { onlyPrivate, onlyPublic } from "../middlewares";
@@ -42,6 +42,6 @@ globalRouter.get(
     postKakaoLogin
 )
 
-globalRouter.get(routes.me, onlyPrivate, getMe);
+globalRouter.get(routes.myProfile, onlyPrivate, getMyPofile);
 
 export default globalRouter;

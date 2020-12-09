@@ -56,6 +56,11 @@
                 text-align: center;
                 margin: 20px 0px 30px;
                 cursor: pointer;
+                transition: all 0.1s ease-in-out;
+            }
+            &[type="submit"]:hover {
+                background-color: #e67e22;
+                transform: scale(0.97)
             }
             &[type="file"] {
                 color: $dark-red;

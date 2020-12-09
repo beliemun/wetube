@@ -8,9 +8,9 @@ const SEARCH = "/search";
 // Users
 const USERS = "/users";
 const USER_DETAIL = "/:id"; // 텍스트가 아닌 변수화 -> user/1;
-const EDIT_PROFILE = "/edit-profile";
-const CHANGE_PASSWORD = "/change-password";
-const ME = "/me";
+const EDIT_PROFILE = "/:id/edit-profile";
+const CHANGE_PASSWORD = "/:id/change-password";
+const MY_PROFILE = "/my-profile";
 
 // Videos
 const VIDEOS = "/videos";
@@ -35,7 +35,7 @@ const routes = {
     search: SEARCH,
 
     users: USERS,
-    me: ME,
+    myProfile: MY_PROFILE,
     userDetail: (id) => {
         if (id) {
             return `/users/${id}`;
@@ -43,7 +43,13 @@ const routes = {
             return USER_DETAIL;
         }
     },
-    editProfile: EDIT_PROFILE,
+    editProfile: (id) => {
+        if (id) {
+            return `/users/${id}/edit-profile`;
+        } else {
+            return EDIT_PROFILE;
+        }
+    },
     changePassword: CHANGE_PASSWORD,
 
     videos: VIDEOS,

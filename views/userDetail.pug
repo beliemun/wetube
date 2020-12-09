@@ -1,10 +1,11 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
     .user-profile__container
         .user-profile__title
             i.fas.fa-id-badge
-            span My Profile
+            span #{user.name}`s Profile
         .user-profile__card    
             .user-profile__info-container
                 img.user-profile__avatar(src=user.avatarUrl)
@@ -20,8 +21,22 @@ block content
                     .user-profile__ids
                         span.user-profile__tag Email : 
                         span.user-profile__id #{user.email}
-            .user-profile-btns
-                .user-profile__change-avatar.btn.btn--color Change Photo
-                .user-profile__edit-profile.btn.btn--outline Edit Profile
+            if loggedUser !== null && user.id === loggedUser.id
+                .user-profile-btns
+                    a(href=routes.editProfile(user.id))
+                        .user-profile__change-avatar.btn.btn--color Edit Profile
+                    a(href=`#`)
+                        .user-profile__edit-profile.btn.btn--outline Change Password
+
+        each item in user.videos
+            +videoBlock({
+                id: item.id,
+                title: item.title,
+                views: item.views,
+                videoFile: item.videoFileUrl,
+                posterFile: item.posterFileUrl,
+            })
+
+
 
 
