@@ -1,10 +1,11 @@
 .social-login
-    button.social-login__github
-        a(href=routes.github)
+    a(href=routes.github)
+        button.social-login__github
             span
                 i.fab.fa-github
                 |  Continue with Github
-    button.social-login__facebook
-        span
-            i.fab.fa-facebook
-            |  Continue with Facebook
+    a(href=routes.kakao)
+        button.social-login__kakao
+            span
+                i.fas.fa-comment
+                |  Continue with Kakao

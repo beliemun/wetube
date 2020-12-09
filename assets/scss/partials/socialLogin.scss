@@ -6,24 +6,25 @@
     padding-top: 30px;
     button {
         width: 100%;
-        min-width: 320px;
+        min-width: 280px;
         padding: 12px;
         font-size: 14px;
         color: $black;
         border: 1px solid $grey;
         border-radius: 15px;
         border-bottom-right-radius: 0px;
+        cursor: pointer;
         &:not(:last-child) {
             margin-bottom: 25px;
         }
     }
     .social-login__github {
-        background-color: $black;
-    }
-    .social-login__facebook {
-        background-color: #4267b2;
-    }
-    span {
         color: white;
+        background-color: $black;
+        margin-bottom: 20px;
+    }
+    .social-login__kakao {
+        color: #1E1E1E;
+        background-color: #ffcd00;
     }
 }

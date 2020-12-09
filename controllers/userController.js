@@ -2,102 +2,152 @@ import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
 
+const NO_IMAGE = '/resources/noimage.png';
+
 export const getJoin = (req, res) => {
-  res.render("join", { pageTitle: "Join" });
+    res.render("join", { pageTitle: "Join" });
 };
 
-export const postJoin = async (req, res, next) => {
-  const {
-    body: { name, email, password, password2 },
-  } = req;
-  if (password !== password2) {
-    res.status(400);
-    res.render("join", { pageTitle: "Join" });
-  } else {
-    try {
-      const user = await User({
-        name,
-        email,
-      });
-      await User.register(user, password);
-      next();
-    } catch (error) {
-      console.log(error);
-      res.redirect(routes.home);
+export const postJoin = async(req, res, next) => {
+    const {
+        body: { name, email, password, password2 },
+    } = req;
+    if (password !== password2) {
+        res.status(400);
+        res.render("join", { pageTitle: "Join" });
+    } else {
+        try {
+            const user = await User({
+                name,
+                email,
+                avatarUrl: NO_IMAGE,
+            });
+            await User.register(user, password);
+            next();
+        } catch (error) {
+            console.log(error);
+            res.redirect(routes.home);
+        }
     }
-  }
 };
 
 export const getLogin = (req, res) => {
-  res.render("login", { pageTitle: "Log in" });
+    res.render("login", { pageTitle: "Log in" });
 };
 
 export const postLogin = passport.authenticate("local", {
-  failureRedirect: routes.login,
-  successRedirect: routes.home,
+    failureRedirect: routes.login,
+    successRedirect: routes.home,
 });
 
 // passport.js의 Github strategy가 동작.
 export const githubLogin = passport.authenticate("github");
 
-export const githubLoginCallback = async (
-  accessToken,
-  refreshToken,
-  profile,
-  cb
+export const githubLoginCallback = async(
+    accessToken,
+    refreshToken,
+    profile,
+    cb
 ) => {
-  const {
-    _json: { id: githubId, avatar_url: avatarUrl, login: name, email },
-  } = profile;
-  console.log("###", githubId, avatarUrl, name, email);
-  try {
-    const user = await User.findOne({ email });
-    if (user) {
-      if (!user.avatarUrl) user.avatarUrl = avatarUrl;
-      user.githubId = githubId;
-      user.save();
-      return cb(null, user); // 첫번째 매개변수 : 에러 없음, 두번째 매개변수 : 찾은 user
-    } else {
-      const newUser = await User.create({
-        name,
-        email,
-        githubId,
-        avatarUrl,
-      });
-      console.log("!", newUser);
-      return cb(null, newUser);
+    const {
+        _json: { id: githubId, avatar_url: avatarUrl, login: name, email },
+    } = profile;
+    try {
+        const user = await User.findOne({ email });
+        if (user) {
+            if (user.avatarUrl === NO_IMAGE && avatarUrl) {
+                user.avatarUrl = avatarUrl;
+            }
+            user.githubId = githubId;
+            user.save();
+            return cb(null, user); // 첫번째 매개변수 : 에러 없음, 두번째 매개변수 : 찾은 user
+        } else {
+            const newUser = await User.create({
+                name,
+                email,
+                githubId,
+                avatarUrl: !avatarUrl ? NO_IMAGE : avatarUrl
+            });
+            return cb(null, newUser);
+        }
+    } catch (error) {
+        return cb(error);
     }
-  } catch (error) {
-    return cb(error);
-  }
 };
 
 export const postGithubLogin = (req, res) => {
-  res.redirect(routes.home);
+    res.redirect(routes.home);
 };
 
+export const kakaoLogin = passport.authenticate("kakao");
+
+export const kakaoLoginCallback = async(
+    accessToken,
+    refreshToken,
+    profile,
+    cb
+) => {
+    const {
+        _json: {
+            id: kakaoId,
+            properties: {
+                nickname: name,
+                profile_image_url: avatarUrl
+            },
+            kakao_account: {
+                email,
+            },
+        }
+    } = profile;
+    const user = await User.findOne({ email });
+    try {
+        if (user) {
+            if (user.avatarUrl === NO_IMAGE && avatarUrl) {
+                user.avatarUrl = avatarUrl;
+            }
+            user.kakaoId = kakaoId;
+            user.save();
+            return cb(null, user);
+        } else {
+            const newUser = await User.create({
+                name,
+                email,
+                kakaoId,
+                avatarUrl: !avatarUrl ? '/resources/noimage.png' : avatarUrl
+            })
+            return cb(null, newUser);
+        }
+    } catch (error) {
+        return cb(error);
+    }
+}
+
+export const postKakaoLogin = (req, res) => {
+    res.redirect(routes.home);
+}
+
 export const logout = (req, res) => {
-  req.logout(); // passport가 logout 해줌
-  res.redirect(routes.home);
+    req.logout(); // passport가 logout 해줌
+    res.redirect(routes.home);
 };
 
 export const getMe = (req, res) => {
-  res.render("userDetail", { pageTitle: "My Profile", user: req.user });
+    res.render("userDetail", { pageTitle: "My Profile", user: req.user });
 };
 
-export const userDetail = async (req, res) => {
-  const {
-    params: { id },
-  } = req;
-  try {
-    const user = await User.findById(id);
-    res.render("userDetail", { pageTitle: "Detail", user });
-  } catch (error) {
-    res.redirect(routes.home);
-  }
+export const userDetail = async(req, res) => {
+    const {
+        params: { id },
+    } = req;
+    try {
+        const user = await User.findById(id);
+        res.render("userDetail", { pageTitle: "Detail", user });
+    } catch (error) {
+        res.redirect(routes.home);
+    }
 };
 
 export const editProfile = (req, res) =>
-  res.render("editProfile", { pageTitle: "Edit Profile" });
+    res.render("editProfile", { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) =>
-  res.render("changePassword", { pageTitle: "Change Password" });
+    res.render("changePassword", { pageTitle: "Change Password" });
