@@ -21,7 +21,7 @@ block content
                     .user-profile__ids
                         span.user-profile__tag Email : 
                         span.user-profile__id #{user.email}
-            if loggedUser !== null && user.id === loggedUser.id
+            if loggedUser && user.id === loggedUser.id
                 .user-profile-btns
                     a(href=routes.editProfile(user.id))
                         .user-profile__change-avatar.btn.btn--color Edit Profile

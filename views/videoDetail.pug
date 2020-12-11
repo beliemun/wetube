@@ -10,10 +10,11 @@ block content
                 h5.video__title=video.title
                 .video__menu
                     span.video__views=`조회수 ${video.views}회　2020. 11. 10.　`
-                    span.viedo__autho
-                        |Uploaded by　
-                        a(href=routes.userDetail(video.creator.id))=video.creator.name
-                    if loggedUser !== null && video.creator.id === loggedUser.id
+                    if (loggedUser && video.creator)
+                        span.viedo__autho
+                            |Uploaded by
+                            a(href=routes.userDetail(video.creator.id))=video.creator.name
+                    if (loggedUser && video.creator) && video.creator.id === loggedUser.id
                         a.video__edit-btn.btn.btn--outline(href=routes.editVideo(video.id)) Edit Video
                 p.video__description=video.description
         .comment__container
@@ -27,5 +28,5 @@ block content
                 input.comment__submit.btn.btn--color(type="submit" value="Enter")
 
 
-    
+
 
