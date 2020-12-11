@@ -1,11 +1,16 @@
 extends layouts/main
 
 block content
-    .form-container
-        form(action=routes.userProfile method="post")
-            label(for="avatar") Avatar
-            input(type="file" name="avatar" id="avatar")
-            input(type="text" placeholder="Name" name ="name")
-            input(type="email" placeholder="Email" name="name")
+    .form__container
+        .heaer__title   
+            i.fas.fa-id-badge
+            span Edit Profile
+        form(action=routes.userProfile method="post" enctype="multipart/form-data")
+            label(for="name") Name
+            input(type="text" name="name" placeholder="Write here.." required=true)
+            label(for="email") Description
+            input(type="text" name="email" placeholder="Write here.." required=true)
+            label(for="avartarFile") Avatar
+            input(type="file" name="avartarFile" id="avartarFile" required=true, accept="image/*")
             input(type="submit" value="Update Profile")
         a.form-container__link(href=routes.chagngePassword)  Change Password
