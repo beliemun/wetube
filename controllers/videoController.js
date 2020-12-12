@@ -72,7 +72,7 @@ export const getEditVideo = async(req, res) => {
 
     try {
         const video = await Video.findById(id);
-        if (`${video.creator}` !== `${req.user.id}`) { // obj와 string을 비교하기 위해
+        if (`${video.creator}` !== req.user.id) {
             throw Error();
         } else {
             res.render("editVideo", { pageTitle: `Edit ${video.title}`, video, });
@@ -87,6 +87,11 @@ export const postEditVideo = async(req, res) => {
         params: { id },
         body: { title, description },
     } = req;
+
+    // const regURL = new RegExp("(http|https|ftp|telnet|news|irc)://([-/.a-zA-Z0-9_~#%$?&=:200-377()]+)", "gi");
+    // const regEmail = new RegExp("([xA1-xFEa-z0-9_-]+@[xA1-xFEa-z0-9-]+.[a-z0-9-]+)", "gi");
+    // const content = `${description}`.replace(regURL, "<a href='$1://$2' target='_blank'>$1://$2</a>").replace(regEmail, "<a href='mailto:$1'>$1</a>");
+    // console.log(content);
     try {
         await Video.findOneAndUpdate({ _id: id }, { title, description });
         res.redirect(routes.videoDetail(id));
@@ -102,7 +107,7 @@ export const deleteVideo = async(req, res) => {
 
     try {
         const video = await Video.findById(id);
-        if (`${video.creator}` !== `${req.user.id}`) {
+        if (`${video.creator}` !== req.user.id) {
             throw Error();
         } else {
             await Video.findOneAndRemove({ _id: id });

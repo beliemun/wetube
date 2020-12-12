@@ -73,4 +73,15 @@
             }
         }
     }
+    .user-videos {
+        margin-top: 20px;
+        width: 620px;
+        .user-video__item {
+            .user-video__title {
+                font-size: 13px;
+                font-weight: 600;
+                color: $dark-grey;
+            }
+        }
+    }
 }

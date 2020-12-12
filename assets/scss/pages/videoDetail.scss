@@ -6,25 +6,49 @@
         flex-direction: column;
         width: 800px;
         height: 100vh;
-        .video__info {
+        .video__header {
             .video__title {
                 font-size: 20px;
                 color: black;
-                margin: 25px 0px 20px;
+                margin: 25px 0px 10px;
             }
-            .video__menu {
+            .video__author {
                 display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                .video__author-avatar {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-right: 10px;
+                }
+                .video__author-name {
+                    color: red;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
                 .video__edit-btn {
                     position: relative;
-                    top: -10px;
                     padding: 10px;
                     font-size: 12px;
                     margin-left: 10px;
                     ;
                 }
             }
+            .video__info {
+                display: flex;
+            }
+            .video__seperator {
+                margin: 20px 0px;
+                width: 100%;
+                height: 1px;
+                background-color: $grey;
+            }
             .video__description {
-                margin-top: 15px;
+                line-height: 22px;
+                padding-top: 20px;
+                overflow: hidden;
             }
         }
     }

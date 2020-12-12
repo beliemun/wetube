@@ -131,28 +131,92 @@ export const logout = (req, res) => {
     res.redirect(routes.home);
 };
 
-export const getMyPofile = (req, res) => {
-    res.render("userDetail", { pageTitle: "My Profile", user: req.user });
+export const getMyPofile = async(req, res) => {
+    const user = await User.findById(req.user.id).populate("videos");
+    res.render("userDetail", { pageTitle: "My Profile", user });
 };
 
 export const userDetail = async(req, res) => {
     const {
         params: { id },
     } = req;
-    console.log("1");
     try {
-        console.log("2");
         const user = await User.findById(id).populate("videos");
         res.render("userDetail", { pageTitle: "Detail", user });
     } catch (error) {
-        console.log("3");
+        console.log(error);
         res.redirect(routes.home);
     }
 };
 
-export const getEditProfile = (req, res) => {
-    res.render("editProfile", { pageTitle: "Edit Profile" });
+export const getEditProfile = async(req, res) => {
+    const {
+        params: { id },
+    } = req;
+    try {
+        const user = await User.findById(id);
+        if (req.user.id !== user.id) {
+            throw Error();
+        }
+        res.render("editProfile", { pageTitle: "Edit Profile", user });
+    } catch (error) {
+        console.log(error);
+        res.redirect(routes.home);
+    }
 }
 
-export const changePassword = (req, res) =>
-    res.render("changePassword", { pageTitle: "Change Password" });
+export const postEditProfile = async(req, res) => {
+    const {
+        body: { name, email },
+        params: { id },
+    } = req;
+    try {
+        const user = await User.findById(id);
+        user.name = name;
+        user.email = email;
+        if (req.file) {
+            user.avatarUrl = routes.home + req.file.path;
+        }
+        user.save();
+        res.redirect(routes.userDetail(id));
+    } catch (error) {
+        console.log(error);
+        res.redirect(routes.home);
+    }
+}
+
+export const getChangePassword = async(req, res) => {
+    const {
+        params: { id }
+    } = req;
+    try {
+        const user = await User.findById(id);
+        res.render("changePassword", { pageTitle: "Change Password", user });
+    } catch (error) {
+        console.log(error);
+        res.redirect(routes.home);
+    }
+}
+
+export const postChangePassword = (req, res) => {
+    const {
+        body: {
+            password,
+            newPassword,
+            confirmPassword
+        },
+        params: { id }
+    } = req;
+    try {
+        if (newPassword !== confirmPassword) {
+            res.status(400);
+            res.redirect(routes.changePassword(id));
+            return;
+        }
+        req.user.changePassword(password, newPassword);
+        res.redirect(routes.myProfile);
+    } catch (error) {
+        res.status(400);
+        res.redirect(routes.changePassword(id));
+    }
+}

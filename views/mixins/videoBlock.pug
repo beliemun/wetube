@@ -1,10 +1,10 @@
 mixin videoBlock(video = {})
-    .videoBlock
-        a(href=routes.videoDetail(video.id))
-            div.video__thumnail--curtain
-                i.fab.fa-youtube
-            video.video__thumnail(width=240 height=140 poster="/"+video.posterFile)
-                source(src="/"+video.videoFile type="video/mp4")
-            h4.videoBlock__title=video.title
-            h6.videoBlock__views
-                span 조회수 #{video.views}회
+  .videoBlock
+    a(href=routes.videoDetail(video.id))
+      .videoBlock__curtain
+        i.fab.fa-youtube
+      video.videoBlock__poster(poster=routes.home+video.posterFile)
+        source(src=routes.home+video.videoFile type="video/mp4")
+      h4.videoBlock__title=video.title
+      h6.videoBlock__views
+        span 조회수 #{video.views}회

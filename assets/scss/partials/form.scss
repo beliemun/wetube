@@ -24,6 +24,12 @@
             font-size: 24px;
         }
     }
+    .form__avater-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
     form {
         display: flex;
         flex-direction: column;

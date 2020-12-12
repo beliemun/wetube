@@ -1,0 +1,11 @@
+mixin thumbnailBlock(video = {})
+    .thumbnailBlock__seperator
+    .thumbnailBlock
+        a(href=routes.videoDetail(video.id))
+            .thumbnailBlock__curtain
+                i.fab.fa-youtube
+        video.thumbnailBlock__poster(poster=routes.home+video.posterFile)
+            source(src=routes.home+video.videoFile type="video/mp4")
+        h4.thumbnailBlock__title=video.title
+        h6.thumbnailBlock__views
+            span 조회수 #{video.views}회

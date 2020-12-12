@@ -50,8 +50,13 @@ const routes = {
             return EDIT_PROFILE;
         }
     },
-    changePassword: CHANGE_PASSWORD,
-
+    changePassword: (id) => {
+        if (id) {
+            return `/users/${id}/change-password`;
+        } else {
+            return CHANGE_PASSWORD;
+        }
+    },
     videos: VIDEOS,
     upload: UPLOAD,
     videoDetail: (id) => {

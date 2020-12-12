@@ -1,45 +1,44 @@
 .videoBlock {
-  position: relative;
-  padding: 5px 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  a {
-    div.video__thumnail--curtain {
-      position: absolute;
-      width: 240px;
-      height: 140px;
-      background-color: rgba(0, 0, 0, 0.3);
-      z-index: 1;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      i {
-        font-size: 50px;
-        z-index: 2;
-        color: rgb(255, 255, 255, 0.7);
-      }
+    position: relative;
+    padding: 5px 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    a {
+        .videoBlock__curtain {
+            position: absolute;
+            width: 240px;
+            height: 140px;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 50px;
+                z-index: 2;
+                color: rgb(255, 255, 255, 0.7);
+            }
+        }
+        .videoBlock__poster {
+            position: relative;
+            width: 240px;
+            height: 140px;
+            margin-bottom: 5px;
+            object-fit: cover;
+        }
+        .videoBlock__title {
+            font-size: 15px;
+            color: black;
+            margin-bottom: 10px;
+            max-width: 240px;
+            line-height: 18px;
+            // height: 20px;
+            // overflow: hidden; // 넘치는 부분 표시 안함
+            // white-space: nowrap; // 공백 입력 무시
+            // text-overflow: ellipsis; // 영역 벗어나면 점 표시
+        }
     }
-    .video__thumnail {
-      position: relative;
-      margin-bottom: 5px;
-      object-fit: cover;
+    .videoBlock__views {
+        font-size: 13px;
     }
-    .videoBlock__title {
-      font-size: 15px;
-      color: black;
-      margin-bottom: 10px;
-
-      max-width: 240px;
-      line-height: 18px;
-      // height: 20px;
-
-      // overflow: hidden; // 넘치는 부분 표시 안함
-      // white-space: nowrap; // 공백 입력 무시
-      // text-overflow: ellipsis; // 영역 벗어나면 점 표시
-    }
-  }
-  .videoBlock__views {
-    font-size: 13px;
-  }
 }
