@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    //- meta(http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self';font-src 'self'; img-src 'self' data: https:; style-src 'self' ; script-src 'self'")
+    //- <meta http-equiv="Content-Security-Policy" content="default-src https://cdnjs.cloudflare.com/; child-src 'none'; object-src 'none'">
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
     title #{pageTitle} | #{siteName}
     link(rel="stylesheet" href="/static/styles.css")
@@ -10,4 +10,5 @@ html
     include ../partials/header
     main
       block content
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js")
     script(src="/static/main.js")

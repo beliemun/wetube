@@ -1,17 +1,20 @@
 mixin videoPlayer(video={})
-    .videoPlayer
-        video.videoBlock__poster(poster=routes.home+video.posterFile)
-            source(src=`/${video.src}` type="video/mp4")
+    .videoPlayer#jsVideoPlayer
+        video()
+            source(src=`/${video.videoFileUrl}` type="video/mp4")
         .videoPlayer__controls
-            .videoPlayer__columns
-                span
-                    i.fas.fa-volume-up
-            .videoPlayer__columns
-                span
-                    i.fas.fa-play
-            .videoPlayer__columns
-                span
-                    i.fas.fa-expand
+            .videoPlayer__play
+                i.fas.fa-play
+            .videoPlayer__playTime
+                .videoPlayer_timeBar
+                span.videoPlayer__timeText
+                    | 00:00 / 10:00
+            .videoPlayer__volume#jsPlayButton
+                i.fas.fa-volume-up
+            .videoPlayer__expand
+                i.fas.fa-expand
+
+
         //- .video__player
         //-         video(controls=true width="800px" poster=video.posterFile autoplay)
         //-             source(src=`/${video.videoFileUrl}` type="video/mp4")
