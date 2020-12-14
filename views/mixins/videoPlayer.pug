@@ -3,13 +3,13 @@ mixin videoPlayer(video={})
         video()
             source(src=`/${video.videoFileUrl}` type="video/mp4")
         .videoPlayer__controls
-            .videoPlayer__play
+            .videoPlayer__play#jsPlayButton
                 i.fas.fa-play
             .videoPlayer__playTime
                 .videoPlayer_timeBar
                 span.videoPlayer__timeText
                     | 00:00 / 10:00
-            .videoPlayer__volume#jsPlayButton
+            .videoPlayer__volume
                 i.fas.fa-volume-up
             .videoPlayer__expand
                 i.fas.fa-expand

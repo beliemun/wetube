@@ -31,6 +31,9 @@
     }
     .videoPlayer__play {
         padding: 18px;
+        i:active {
+            color: tomato;
+        }
     }
     .videoPlayer__playTime {
         flex: auto;
