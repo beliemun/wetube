@@ -6,14 +6,18 @@ mixin videoPlayer(video={})
             .videoPlayer__play#jsPlayButton
                 i.fas.fa-play
             .videoPlayer__playTime
-                .videoPlayer_timeBar
+                .videoPlayer_timeBar-Backward
+                .videoPlayer_timeBar-forward
                 span.videoPlayer__timeText
-                    | 00:00 / 10:00
-            .videoPlayer__volume
+                    span#jsCurrentTime 00:00:00
+                    |⠀/⠀
+                    span#jsTotalTime 00:00:00
+            .videoPlayer__volumeButton#jsVolumeButton
                 i.fas.fa-volume-up
-            .videoPlayer__expand
+            .videoPlayer__volumeRange
+                input#jsVolumeRange(type="range", min=0, max=1, step=0.1 value=0.5)
+            .videoPlayer__expand#jsFullScreen
                 i.fas.fa-expand
-
 
         //- .video__player
         //-         video(controls=true width="800px" poster=video.posterFile autoplay)
