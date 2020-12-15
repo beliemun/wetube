@@ -2,7 +2,7 @@ mixin videoPlayer(video={})
     .videoPlayer#jsVideoPlayer
         video()
             source(src=`/${video.videoFileUrl}` type="video/mp4")
-        .videoPlayer__controls
+        .videoPlayer__controls#jsControls
             .videoPlayer__play#jsPlayButton
                 i.fas.fa-play
             .videoPlayer__playTime
@@ -17,7 +17,3 @@ mixin videoPlayer(video={})
                 input#jsVolumeRange(type="range", min=0, max=1, step=0.1 value=0.5)
             .videoPlayer__expand#jsFullScreen
                 i.fas.fa-expand
-
-        //- .video__player
-        //-         video(controls=true width="800px" poster=video.posterFile autoplay)
-        //-             source(src=`/${video.videoFileUrl}` type="video/mp4")

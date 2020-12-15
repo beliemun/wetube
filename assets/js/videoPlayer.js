@@ -1,4 +1,5 @@
 const videoContainer = document.getElementById("jsVideoPlayer");
+const videoControls = document.getElementById("jsControls");
 const videoPlayer = document.querySelector("#jsVideoPlayer video");
 const playButton = document.getElementById("jsPlayButton");
 const volumeButton = document.getElementById("jsVolumeButton");
@@ -110,6 +111,7 @@ const init = () => {
   fullScreenButton.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
+  // videoPlayer.addEventListener("mousemove", handleMoved);
   volumeRange.addEventListener("input", handleVolumeDrag);
   timeRange.addEventListener("input", handleTimeDrag);
 };
