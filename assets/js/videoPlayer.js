@@ -6,6 +6,7 @@ const fullScreenButton = document.getElementById("jsFullScreen");
 const currentTime = document.getElementById("jsCurrentTime");
 const totalTime = document.getElementById("jsTotalTime");
 const volumeRange = document.getElementById("jsVolumeRange");
+const timeRange = document.getElementById("jsTimeRange");
 
 const formatDate = (duration) => {
   const seconds = parseInt(duration, 10);
@@ -19,10 +20,14 @@ const formatDate = (duration) => {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  if (seconds < 10) {
+  if (totalSeconds < 10) {
     totalSeconds = `0${totalSeconds}`;
   }
   return `${hours}:${minutes}:${totalSeconds}`;
+};
+
+const setTimeRange = () => {
+  timeRange.value = videoPlayer.currentTime / videoPlayer.duration;
 };
 
 const getCurrentTime = () => {
@@ -35,13 +40,17 @@ const setTotalTime = () => {
   setInterval(getCurrentTime, 1000);
 };
 
+const playInterval = () => setInterval(setTimeRange, 10);
+
 const handlePlayClick = () => {
   if (videoPlayer.paused) {
     videoPlayer.play();
-    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    playInterval();
   } else {
     videoPlayer.pause();
-    playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    clearInterval(playInterval);
   }
 };
 
@@ -75,7 +84,7 @@ const handleEnded = () => {
   playButton.innerHTML = '<i class="fas fa-play"></i>';
 };
 
-const handleDrag = (event) => {
+const handleVolumeDrag = (event) => {
   const {
     target: { value },
   } = event;
@@ -89,6 +98,11 @@ const handleDrag = (event) => {
   }
 };
 
+const handleTimeDrag = (event) => {
+  clearInterval(playInterval);
+  videoPlayer.currentTime = videoPlayer.duration * event.target.value;
+};
+
 const init = () => {
   videoPlayer.volume = 0.5;
   playButton.addEventListener("click", handlePlayClick);
@@ -96,7 +110,8 @@ const init = () => {
   fullScreenButton.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
-  volumeRange.addEventListener("input", handleDrag);
+  volumeRange.addEventListener("input", handleVolumeDrag);
+  timeRange.addEventListener("input", handleTimeDrag);
 };
 
 if (videoContainer) {

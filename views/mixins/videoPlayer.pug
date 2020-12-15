@@ -6,8 +6,7 @@ mixin videoPlayer(video={})
             .videoPlayer__play#jsPlayButton
                 i.fas.fa-play
             .videoPlayer__playTime
-                .videoPlayer_timeBar-Backward
-                .videoPlayer_timeBar-forward
+                input.videoPlayer_timeRange#jsTimeRange(type="range" mix=0, max=1, step=0.001, value=0,)
                 span.videoPlayer__timeText
                     span#jsCurrentTime 00:00:00
                     |⠀/⠀

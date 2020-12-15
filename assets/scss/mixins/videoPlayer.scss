@@ -21,7 +21,7 @@
     bottom: 20px;
     width: 95%;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     margin: auto;
     display: flex;
@@ -43,12 +43,11 @@
     padding: 10px 10px 10px 0px;
     display: flex;
     align-items: center;
-    .videoPlayer_timeBar-Backward {
+    .videoPlayer_timeRange {
       display: block;
       width: 100%;
       height: 6px;
       margin: 5px 5px 5px 0px;
-      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 3px;
     }
     .videoPlayer__timeText {
@@ -61,13 +60,14 @@
   .videoPlayer__volumeRange {
     position: absolute;
     transform: rotate(-90deg);
-    right: 50px;
-    bottom: 70px;
+    right: 45px;
+    bottom: 65px;
     overflow: hidden; // 슬라이더가 완전히 채워지고 사라지기 위해 필요
     // -webkit-appearance: none;
     input {
+      margin: 10px;
       width: 50px;
-      height: 10px;
+      height: 5px;
     }
   }
   .videoPlayer__play,
