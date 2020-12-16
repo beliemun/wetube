@@ -1,98 +1,98 @@
 .form__container {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header__logo {
+    width: 300px;
+    margin-top: 50px;
+  }
+  .heaer__title {
+    display: flex;
+    align-items: center;
+    margin: 40px 0px;
+    i {
+      color: $dark-red;
+      position: relative;
+      top: 2px;
+      font-size: 20px;
+    }
+    span {
+      color: $dark-red;
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+  .form__avater-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .header__logo {
-        width: 300px;
-        margin-top: 50px;
+    width: 100%;
+    max-width: 600px;
+    textarea,
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 15px;
+      font-size: 14px;
+      color: $black;
+      font-weight: 600;
+      border: 0px;
+      border-radius: 15px;
+      border-bottom-right-radius: 0px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
+      &::placeholder {
+        color: $grey;
+        font-size: 14px;
+      }
+      &[type="submit"] {
+        color: white;
+        background-color: $dark-red;
+        font-size: 16px;
+        border-radius: 15px;
+        border-bottom-right-radius: 0px;
+        text-align: center;
+        margin: 20px 0px 30px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+      }
+      &[type="submit"]:hover {
+        background-color: #e67e22;
+        transform: scale(0.97);
+      }
+      &[type="file"] {
+        color: $dark-red;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
+      }
+      &:focus {
+        border: 3px solid rgba(255, 0, 0, 0.2);
+      }
+      &:focus[type="submit"] {
+        border: none;
+      }
+      &[type="file"]:focus {
+        border: 0px;
+      }
     }
-    .heaer__title {
-        display: flex;
-        align-items: center;
-        margin: 40px 0px;
-        i {
-            color: $dark-red;
-            position: relative;
-            top: 2px;
-            font-size: 20px;
-        }
-        span {
-            color: $dark-red;
-            margin-left: 10px;
-            font-weight: 600;
-            font-size: 24px;
-        }
+    textarea {
+      min-height: 120px;
     }
-    .form__avater-badge {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
+    label {
+      padding: 0px 10px 5px;
+      align-self: start;
+      margin-bottom: 5px;
+      color: $dark-grey;
+      font-size: 12px;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 600px;
-        textarea,
-        input {
-            display: block;
-            width: 100%;
-            margin-bottom: 20px;
-            padding: 15px;
-            font-size: 14px;
-            color: $black;
-            font-weight: 600;
-            border: 0px solid $grey;
-            border-radius: 15px;
-            border-bottom-right-radius: 0px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
-            &::placeholder {
-                color: $grey;
-                font-size: 14px;
-            }
-            &[type="submit"] {
-                color: white;
-                background-color: $dark-red;
-                font-size: 16px;
-                border-radius: 15px;
-                border-bottom-right-radius: 0px;
-                text-align: center;
-                margin: 20px 0px 30px;
-                cursor: pointer;
-                transition: all 0.1s ease-in-out;
-            }
-            &[type="submit"]:hover {
-                background-color: #e67e22;
-                transform: scale(0.97)
-            }
-            &[type="file"] {
-                color: $dark-red;
-                overflow: hidden;
-                background-color: white;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
-            }
-            &:focus {
-                border: 3px solid rgba(255, 0, 0, 0.2);
-            }
-            &:focus[type="submit"] {
-                border: none;
-            }
-            &[type="file"]:focus {
-                border: 0px;
-            }
-        }
-        textarea {
-            min-height: 120px;
-        }
-        label {
-            padding: 0px 10px 5px;
-            align-self: start;
-            margin-bottom: 5px;
-            color: $dark-grey;
-            font-size: 12px;
-        }
-    }
+  }
 }

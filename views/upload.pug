@@ -1,17 +1,22 @@
 extends layouts/main
 
 block content
-    .form__container
-        .heaer__title   
-            i.fas.fa-video
-            span Upload a new video
-        form(action=routes.videos+routes.upload method="post" enctype="multipart/form-data")
-            label(for="title") Title
-            input(type="text" name="title" placeholder="Write here.." required=true)
-            label(for="description") Description
-            textarea(name="description" placeholder="Write here.." required=true)
-            label(for="videoFile") Add Video File
-            input(type="file" name="videoFile" id="videoFile" required=true, accept="video/*")
-            label(for="posterFile") Add Thumnail Image
-            input(type="file" name="posterFile" id="posterFile" accept="image/*")
-            input(type="submit" value="Upload Video")
+  .form__container
+    .heaer__title   
+      i.fas.fa-video
+      span Upload a new video
+    form(action=routes.videos+routes.upload method="post" enctype="multipart/form-data")
+      label(for="title") Title
+      input(type="text" name="title" placeholder="Write here.." required=true)
+      label(for="description") Description
+      textarea(name="description" placeholder="Write here.." required=true)
+      label(for="videoFile") Add Video File
+      input(type="file" name="videoFile" id="videoFile" required=true, accept="video/*")
+      label(for="posterFile") Add Thumnail Image
+      input(type="file" name="posterFile" id="posterFile" accept="image/*")
+      input(type="submit" value="Upload Video")
+    .record-container#jsRecordContainer
+      .seperator
+      span.record__title + Or record a new video now
+      video#jsVideoPreview
+      button#jsRecordButton Start Recording
