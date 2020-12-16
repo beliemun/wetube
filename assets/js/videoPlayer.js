@@ -1,5 +1,4 @@
 const videoContainer = document.getElementById("jsVideoPlayer");
-const videoControls = document.getElementById("jsControls");
 const videoPlayer = document.querySelector("#jsVideoPlayer video");
 const playButton = document.getElementById("jsPlayButton");
 const volumeButton = document.getElementById("jsVolumeButton");
@@ -8,6 +7,14 @@ const currentTime = document.getElementById("jsCurrentTime");
 const totalTime = document.getElementById("jsTotalTime");
 const volumeRange = document.getElementById("jsVolumeRange");
 const timeRange = document.getElementById("jsTimeRange");
+
+const registerView = () => {
+  const videoId = window.location.href.split("/videos/")[1];
+  console.log("videoId", videoId);
+  fetch(`/api/${videoId}/view`, {
+    method: "POST",
+  });
+};
 
 const formatDate = (duration) => {
   const seconds = parseInt(duration, 10);
@@ -81,6 +88,7 @@ const goFullScreen = () => {
 };
 
 const handleEnded = () => {
+  registerView();
   videoPlayer.currentTime = 0;
   playButton.innerHTML = '<i class="fas fa-play"></i>';
 };
@@ -111,7 +119,6 @@ const init = () => {
   fullScreenButton.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
-  // videoPlayer.addEventListener("mousemove", handleMoved);
   volumeRange.addEventListener("input", handleVolumeDrag);
   timeRange.addEventListener("input", handleTimeDrag);
 };

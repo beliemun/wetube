@@ -14,6 +14,7 @@ import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
+import apiRouter from "./routers/apiRouter";
 
 import "./passport";
 
@@ -31,16 +32,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); // 기록 미들웨어
 app.use(
-    session({
-        secret: process.env.COOKIE_SCRET,
-        resave: true,
-        saveUninitialized: false,
-        // mongoose가 이 저장소를 mongoDB에 연결해 줌
-        // 즉, 이 CookieStore(session 정보)를 DB에 연결해야 하기 때문에 사용한다.
-        store: new CookieStore({
-            mongooseConnection: mongoose.connection,
-        })
-    })
+  session({
+    secret: process.env.COOKIE_SCRET,
+    resave: true,
+    saveUninitialized: false,
+    // mongoose가 이 저장소를 mongoDB에 연결해 줌
+    // 즉, 이 CookieStore(session 정보)를 DB에 연결해야 하기 때문에 사용한다.
+    store: new CookieStore({
+      mongooseConnection: mongoose.connection,
+    }),
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,5 +50,6 @@ app.use(localsMiddleware);
 app.use(routes.home, globalRouter); // get이 아니라 use라는 것이 중요! // "/use"에 접근하면 두번째 함수를 실행하겠다는 의미
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
