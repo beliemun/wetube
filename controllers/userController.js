@@ -220,3 +220,15 @@ export const postChangePassword = (req, res) => {
         res.redirect(routes.changePassword(id));
     }
 }
+
+export const postCheckLogin = (req, res) => {
+    const {
+        user
+    } = req;
+    if (user) {
+        res.status(200);
+    } else {
+        res.status(204);
+    }
+    res.end();
+}

@@ -1,0 +1,15 @@
+.requiredModal#jsRequiredModal
+    .modal__container    
+        .modal__title
+            img(src='/resources/icon_small.png')
+        .modal__seperator
+        .modal__content
+            p 
+                |If you want to write comments, you need to login first. 
+                |Do you want to move to login page?
+        .modal__button-container
+            button.modal__no-button#jsNoButton
+                span No
+            a(href=routes.login)
+                button.modal__yes-button#jsYesButton
+                    span Yes
