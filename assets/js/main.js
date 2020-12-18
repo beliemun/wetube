@@ -1,7 +1,7 @@
 import "../scss/styles.scss";
 import "./videoPlayer";
 import "./videoRecorder";
-import "./addComment";
+import "./comment";
 import "./requiredModal";
 
 const element = document.querySelector(".home-menu__home");
