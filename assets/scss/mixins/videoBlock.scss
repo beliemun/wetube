@@ -32,10 +32,9 @@
             margin-bottom: 10px;
             max-width: 240px;
             line-height: 18px;
-            // height: 20px;
-            // overflow: hidden; // 넘치는 부분 표시 안함
-            // white-space: nowrap; // 공백 입력 무시
-            // text-overflow: ellipsis; // 영역 벗어나면 점 표시
+            overflow: hidden; // 넘치는 부분 표시 안함
+            white-space: nowrap; // 공백 입력 무시
+            text-overflow: ellipsis; // 영역 벗어나면 점 표시
         }
     }
     .videoBlock__views {

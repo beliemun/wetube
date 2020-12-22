@@ -23,7 +23,7 @@ block content
                     span="⠀views⠀"
                     sapn #{(video.createdAt).toISOString().slice(0,10)}
                 .video__seperator
-                    pre.video__description=video.description
+                    pre.video__description#jsDescription=video.description
         .comment__container
             .video__comments
                 span.video__comment-number
@@ -38,9 +38,10 @@ block content
             ul.comoment__list#jsCommentList
                 each comment in video.comments.reverse()
                     li.comment__item(id=comment.id)
-                        img.comment__avatar(src=comment.avatarUrl)
+                        a(href=routes.userDetail(`${comment.creator}`))
+                            img.comment__avatar(src=comment.avatarUrl)
                         .comment__content
-                            .comment__title
+                            a.comment__title(href=routes.userDetail(`${comment.creator}`))
                                 span.comment__name #{comment.name}
                                 span.comment__created-at #{(comment.createdAt).toISOString().slice(5,10)}
                             .comment__text

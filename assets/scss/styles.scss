@@ -3,6 +3,7 @@
 @import "config/reset.scss";
 // partials
 @import "mixins/videoBlock.scss";
+@import "mixins/searchVideoBlock.scss";
 @import "mixins/videoPlayer.scss";
 @import "mixins/thumbnailBlock.scss";
 @import "partials/button.scss";
@@ -17,5 +18,6 @@
 @import "pages/home.scss";
 @import "pages/userDetail.scss";
 @import "pages/videoDetail.scss";
+@import "pages/searching.scss";
 //main
 @import "main.scss";

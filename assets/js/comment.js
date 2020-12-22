@@ -81,7 +81,7 @@ const addComment = (comment, name, avatarUrl, commentId) => {
     increaseCommentNumber();
 };
 
-const sendCommentToAddAPI = async(comment, name, avatarUrl) => {
+const sendCommentToAddAPI = async (comment, name, avatarUrl) => {
     const videoId = window.location.href.split("/videos/")[1];
     const response = await axios({
         url: `/api/${videoId}/comment`,

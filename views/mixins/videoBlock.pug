@@ -7,4 +7,7 @@ mixin videoBlock(video = {})
         source(src=routes.home+video.videoFile type="video/mp4")
       h4.videoBlock__title=video.title
       h6.videoBlock__views
-        span 조회수 #{video.views}회
+        if video.views < 2
+          span #{video.views} view
+        else
+          span #{video.views} views

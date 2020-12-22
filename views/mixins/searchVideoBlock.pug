@@ -1,0 +1,18 @@
+mixin searchVideoBlock(video = {})
+  .searchVideoBlock
+    .searchVideoBlock__seperator
+    a(href=routes.videoDetail(video.id))
+      .searchVideoBlock__poster
+        .searchVideoBlock__curtain
+          i.fab.fa-youtube
+        video.searchVideoBlock__poster(poster=routes.home+video.posterFile)
+          source(src=routes.home+video.videoFile type="video/mp4")
+      .searchVideoBlock__content
+        h4.searchVideoBlock__title=video.title
+        h6.searchVideoBlock__views
+          if video.views < 2
+            span #{video.views} view
+          else
+            span #{video.views} views
+          sapn ㅤ#{(video.createdAt).toISOString().slice(0,10)}
+        p.searchVideoBlock__description=video.description
