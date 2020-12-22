@@ -4,11 +4,13 @@ import "./models/Video";
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true, // 경고를 없애주기 위해 사용
-});
+mongoose.connect(
+    process.env.PRODUCTION ? process.env.MONGO_URL_PROD : process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true, // 경고를 없애주기 위해 사용
+    }
+);
 
 const db = mongoose.connection;
 
