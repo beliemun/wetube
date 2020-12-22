@@ -5,6 +5,7 @@
     "main": "index.js",
     "author": "Brian",
     "dependencies": {
+        "@babel/cli": "^7.12.10",
         "@babel/core": "^7.11.6",
         "@babel/node": "^7.10.5",
         "@babel/polyfill": "^7.12.1",
@@ -33,9 +34,14 @@
         "pug": "^3.0.0"
     },
     "scripts": {
-        "dev:server": "nodemon --exec babel-node init.js",
-        "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
-        "build:assets": "cross-env WEBPACK_ENV=production webpack"
+        "dev:server": "nodemon --exec babel-node src/init.js",
+        "dev:assets": "cd src && cross-env WEBPACK_ENV=development && webpack -w",
+        "build:assets": "cd src && cross-env WEBPACK_ENV=production && webpack",
+        "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
+        "copyAll": "xcopy src\\static build\\static /d /e /h /c /y /i && xcopy src\\views build\\views /d /e /h /c /y /i",
+        "build": "npm run build:server && npm run build:assets && npm run copyAll",
+        "prebuild": "rd /s \"build\"",
+        "start": "node build/init.js"
     },
     "devDependencies": {
         "autoprefixer": "^10.0.2",

@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 // delfault로 export 하지 않았으므로 {}안에 써준다.
@@ -24,24 +25,24 @@ const CookieStore = MongoStore(session);
 
 app.use(helmet()); // 보안 미들웨어
 app.set("view engine", "pug"); // 이 설정을 하면 render함수가 /view에서 pug파일을 찾을 수 있다.
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
-app.use("/resources", express.static("resources"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/static", express.static(path.join(__dirname, "static")));
+app.use("/resources", express.static(path.join(__dirname, "resources")));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); // 기록 미들웨어
 app.use(
-  session({
-    secret: process.env.COOKIE_SCRET,
-    resave: true,
-    saveUninitialized: false,
-    // mongoose가 이 저장소를 mongoDB에 연결해 줌
-    // 즉, 이 CookieStore(session 정보)를 DB에 연결해야 하기 때문에 사용한다.
-    store: new CookieStore({
-      mongooseConnection: mongoose.connection,
-    }),
-  })
+    session({
+        secret: process.env.COOKIE_SCRET,
+        resave: true,
+        saveUninitialized: false,
+        // mongoose가 이 저장소를 mongoDB에 연결해 줌
+        // 즉, 이 CookieStore(session 정보)를 DB에 연결해야 하기 때문에 사용한다.
+        store: new CookieStore({
+            mongooseConnection: mongoose.connection,
+        }),
+    })
 );
 app.use(passport.initialize());
 app.use(passport.session());
