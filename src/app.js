@@ -37,7 +37,7 @@ app.use(
         secret: process.env.COOKIE_SCRET,
         resave: true,
         saveUninitialized: false,
-        // mongoose가 이 저장소를 mongoDB에 연결해 줌
+        // mongoose가 이 저장소를 mongoDB에 연결해 줌.
         // 즉, 이 CookieStore(session 정보)를 DB에 연결해야 하기 때문에 사용한다.
         store: new CookieStore({
             mongooseConnection: mongoose.connection,
