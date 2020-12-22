@@ -175,7 +175,7 @@ export const postEditProfile = async(req, res) => {
         user.name = name;
         user.email = email;
         if (req.file) {
-            user.avatarUrl = routes.home + req.file.path;
+            user.avatarUrl = routes.home + req.file.location;
         }
         user.save();
         res.redirect(routes.userDetail(id));

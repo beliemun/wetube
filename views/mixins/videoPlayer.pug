@@ -1,7 +1,7 @@
 mixin videoPlayer(video={})
     .videoPlayer#jsVideoPlayer
         video(autoplay)
-            source(src=`/${video.videoFileUrl}` type="video/mp4")
+            source(src=video.videoFileUrl type="video/mp4")
         .videoPlayer__controls#jsControls
             .videoPlayer__play#jsPlayButton
                 i.fas.fa-play

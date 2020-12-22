@@ -3,8 +3,8 @@ mixin videoBlock(video = {})
     a(href=routes.videoDetail(video.id))
       .videoBlock__curtain
         i.fab.fa-youtube
-      video.videoBlock__poster(poster=routes.home+video.posterFile)
-        source(src=routes.home+video.videoFile type="video/mp4")
+      video.videoBlock__poster(poster=video.posterFile)
+        source(src=video.videoFile type="video/mp4")
       h4.videoBlock__title=video.title
       h6.videoBlock__views
         if video.views < 2

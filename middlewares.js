@@ -1,13 +1,84 @@
 import multer from "multer";
+import multerS3 from "multer-s3";
+import aws from "aws-sdk";
 import routes from "./routes";
+import Video from "./models/Video";
 
-const multerVideo = multer({ dest: "uploads/videos/" }); // 업로드 될 서버 경로
+const s3 = new aws.S3({
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'ap-northeast-2'
+})
+
+const multerVideo = multer({
+    storage: multerS3({
+        s3,
+        acl: 'public-read',
+        bucket: "nicotube/videos"
+    })
+});
+
 export const uploadVideo = multerVideo.fields([
     { name: "videoFile" },
     { name: "posterFile" },
 ]);
 
-const multerAvatar = multer({ dest: "uploads/Users/" });
+export const deleteVideoFile = async(req, res, next) => {
+    const {
+        params: { id },
+    } = req;
+
+    try {
+        const video = await Video.findById(id);
+        if (`${video.creator}` !== req.user.id) {
+            throw Error();
+        } else {
+            const videoFileUrl = video.videoFileUrl.split('/');
+            const videoFileName = videoFileUrl[videoFileUrl.length - 1];
+            console.log("1", videoFileName);
+            const videoParams = {
+                Bucket: "nicotube/videos",
+                Key: videoFileName
+            }
+            s3.deleteObject(videoParams, (err, data) => {
+                if (err) {
+                    console.log("Failed delete video!")
+                    console.log(err);
+                } else {
+                    console.log("Deleted video");
+                }
+            });
+
+            const posterFileUrl = video.posterFileUrl.split('/');
+            const posterFileName = posterFileUrl[posterFileUrl.length - 1];
+            console.log("2", posterFileName);
+            const posterParams = {
+                Bucket: "nicotube/videos",
+                Key: posterFileName
+            }
+            s3.deleteObject(posterParams, (err, data) => {
+                if (err) {
+                    console.log("Failed delete video!")
+                    console.log(err);
+                } else {
+                    console.log("Deleted poster");
+                }
+            });
+        }
+    } catch (error) {
+        console.log(error);
+    }
+    next();
+};
+
+const multerAvatar = multer({
+    storage: multerS3({
+        s3,
+        acl: 'public-read',
+        bucket: "nicotube/avatars"
+    })
+});
+
 export const uploadAvatar = multerAvatar.single("avatarFile");
 
 export const localsMiddleware = (req, res, next) => {
