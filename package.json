@@ -40,12 +40,12 @@
         "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
         "copyAll": "shx cp -r src/static build/static && shx cp -r src/views build/views",
         "build": "npm run build:server && npm run build:assets && npm run copyAll",
-        "start": "node build/init.js",
+        "start": "PRODUCTION=true node build/init.js",
         "prestart": "npm run build"
     },
     "devDependencies": {
         "autoprefixer": "^10.0.2",
-        "cross-env": "^7.0.2",
+        "cross-env": "^7.0.3",
         "css-loader": "^5.0.1",
         "eslint": "^7.13.0",
         "eslint-config-airbnb-base": "^14.2.1",
