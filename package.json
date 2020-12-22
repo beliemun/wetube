@@ -45,7 +45,7 @@
     },
     "scripts": {
         "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static'",
-        "dev:assets": "cd src && webpack  webpack -w",
+        "dev:assets": "cd src && webpack -w",
         "build:assets": "cd src && webpack ",
         "build:server": "babel src --out-dir build --ignore 'src/assets --ignore 'src/static' --ignore 'webpack.config.js",
         "copyAll": "shx cp -R src/static build && shx cp -R src/views build",

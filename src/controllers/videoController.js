@@ -140,7 +140,7 @@ export const postRegisterView = async(req, res) => {
 };
 
 // Register Comments
-const NO_IMAGE = '/resources/noimage.png';
+const NO_IMAGE = '/src/resources/noimage.png';
 export const postAddComment = async(req, res) => {
     const {
         params: { id },
