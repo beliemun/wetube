@@ -38,7 +38,7 @@
         "dev:assets": "cd src && cross-env WEBPACK_ENV=development && webpack -w",
         "build:assets": "cd src && cross-env WEBPACK_ENV=production && webpack",
         "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
-        "copyAll": "xcopy src\\static build\\static /d /e /h /c /y /i && xcopy src\\views build\\views /d /e /h /c /y /i",
+        "copyAll": "shx cp -r src/static build/static && shx cp -r src/views build/views",
         "build": "npm run build:server && npm run build:assets && npm run copyAll",
         "start": "node build/init.js",
         "prestart": "npm run build"
@@ -59,6 +59,7 @@
         "prettier": "^2.1.2",
         "sass": "^1.29.0",
         "sass-loader": "^10.0.5",
+        "shx": "^0.3.3",
         "webpack": "4.44.2",
         "webpack-cli": "^4.2.0"
     }
