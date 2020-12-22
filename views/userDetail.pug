@@ -33,7 +33,7 @@ block content
                     .user-video__title
                         h2 #{user.name}님께서 업로드한 영상
                 .user-video__list
-                    each item in user.videos.reverse()
+                    each item in user.videos
                         +thumbnailBlock({
                             id: item.id,
                             title: item.title,

@@ -84,67 +84,8 @@
                 border: 0px;
             }
         }
-        .comoment__list {
-            .comment__item {
-                display: flex;
-                align-items: flex-start;
-                margin: 10px;
-                .comment__avatar {
-                    width: 40px;
-                    min-width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    background-color: $grey;
-                }
-                .comment__content {
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 10px;
-                    .comment__title {
-                        display: flex;
-                        margin: 5px 0px;
-                        .comment__name {
-                            color: $dark-red;
-                            font-weight: 600;
-                            margin-left: 10px;
-                        }
-                        .comment__created-at {
-                            // width: 40px;
-                            font-size: 11px;
-                            color: $dark-grey;
-                            margin-left: 5px;
-                        }
-                    }
-                    .comment__text {
-                        position: relative;
-                        p {
-                            line-height: 20px;
-                            margin-left: 10px;
-                            padding: 10px;
-                            border-radius: 10px;
-                            border-top-left-radius: 0px;
-                            background-color: white;
-                            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
-                            word-wrap: break-word;
-                        }
-                        .comment__delete {
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            font-size: 9px;
-                            color: white;
-                            padding: 4px 6px;
-                            border-radius: 50%;
-                            margin-left: 5px;
-                            border: 0px;
-                            background-color: red;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
+        .comoment-list {
+            background-color: antiquewhite;
         }
     }
 }

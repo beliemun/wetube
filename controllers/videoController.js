@@ -62,10 +62,7 @@ export const videoDetail = async(req, res) => {
         const video = await Video.findById(id)
             .populate("creator")
             .populate("comments");
-        res.render("videoDetail", {
-            pageTitle: video.title,
-            video,
-        });
+        res.render("videoDetail", { pageTitle: video.title, video });
     } catch (error) {
         res.redirect(routes.home);
     }
@@ -144,7 +141,6 @@ export const postRegisterView = async(req, res) => {
 };
 
 // Register Comments
-const NO_IMAGE = '/resources/noimage.png';
 export const postAddComment = async(req, res) => {
     const {
         params: { id },
@@ -157,11 +153,8 @@ export const postAddComment = async(req, res) => {
         const newComment = await Comment.create({
             text: comment,
             creator: user.id,
-            avatarUrl: user.avatarUrl ? user.avatarUrl : NO_IMAGE,
-            name: user.name ? user.name : "no name",
         });
         video.comments.push(newComment.id);
-        res.json({ id: newComment.id });
         video.save();
     } catch (error) {
         console.log(error);
@@ -169,21 +162,3 @@ export const postAddComment = async(req, res) => {
         res.end();
     }
 };
-
-// Delete Comments
-export const postDeleteComment = async(req, res) => {
-    const {
-        params: { id },
-        body: { commentId }
-    } = req;
-
-    try {
-        const video = await Video.findById(id);
-        video.comments.remove(commentId);
-        video.save();
-    } catch (error) {
-        console.log(error);
-    } finally {
-        res.end();
-    }
-}

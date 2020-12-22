@@ -226,10 +226,7 @@ export const postCheckLogin = (req, res) => {
         user
     } = req;
     if (user) {
-        res.json({
-            name: user.name,
-            avatarUrl: user.avatarUrl,
-        })
+        res.status(200);
     } else {
         res.status(204);
     }

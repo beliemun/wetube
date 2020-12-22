@@ -20,34 +20,26 @@ block content
                         a.video__edit-btn.btn.btn--outline(href=routes.editVideo(video.id)) Edit Video
                 .video__info
                     span#jsViewNumber #{video.views} 
-                    span="⠀views⠀"
-                    sapn #{(video.createdAt).toISOString().slice(0,10)}
+                    span="⠀views"
+                    sapn="⠀2020. 11. 10."
                 .video__seperator
                     pre.video__description=video.description
         .comment__container
             .video__comments
-                span.video__comment-number
-                    span#jsCommentNumber #{video.comments.length}
-                    if video.comments.length > 1
-                        |    comments
-                    else
+                if video.comments.length === 1
+                    span.video__comment-number 1
                         |    comment
+                else
+                    span.video__comment-number
+                        span#jsCommentNumber #{video.comments.length}
+                        |    comments
             form.comment__form#jsAddComment
                 input.comment__input(type="text" placeholder="Add a comment")
                 input.comment__submit.btn.btn--color(type="submit" value="Enter")
             ul.comoment__list#jsCommentList
                 each comment in video.comments.reverse()
-                    li.comment__item(id=comment.id)
-                        img.comment__avatar(src=comment.avatarUrl)
-                        .comment__content
-                            .comment__title
-                                span.comment__name #{comment.name}
-                                span.comment__created-at #{(comment.createdAt).toISOString().slice(5,10)}
-                            .comment__text
-                                p #{comment.text}
-                                if loggedUser && (`${comment.creator}` === loggedUser.id)
-                                    button.comment__delete X
-
+                    li.comoment__item
+                        span.comment__text #{comment.text}
 
 
 
