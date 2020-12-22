@@ -40,12 +40,12 @@ export const deleteVideoFile = async(req, res, next) => {
                 Bucket: "nicotube/videos",
                 Key: videoFileName
             }
-            s3.deleteObject(videoParams, (err, data) => {
+            s3.deleteObject(videoParams, (err) => {
                 if (err) {
                     console.log("Failed delete video!")
                     console.log(err);
                 } else {
-                    console.log("Deleted video");
+                    console.log("Deleted a video file");
                 }
             });
 
@@ -56,12 +56,12 @@ export const deleteVideoFile = async(req, res, next) => {
                 Bucket: "nicotube/videos",
                 Key: posterFileName
             }
-            s3.deleteObject(posterParams, (err, data) => {
+            s3.deleteObject(posterParams, (err) => {
                 if (err) {
                     console.log("Failed delete video!")
                     console.log(err);
                 } else {
-                    console.log("Deleted poster");
+                    console.log("Deleted a poster file");
                 }
             });
         }
