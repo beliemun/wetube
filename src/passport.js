@@ -31,10 +31,10 @@ passport.use(
     new KakaoStrategy({
             clientID: process.env.KAKAO_CLIENT_ID,
             clientSecret: process.env.KAKAO_CLIENT_SECRET, // clientSecret을 사용하지 않는다면 넘기지 말거나 빈 스트링을 넘길 것
-            callbackURL: `https://stormy-hollows-56478.herokuapp.com${routes.kakaoCallbacka}`
+            callbackURL: `https://stormy-hollows-56478.herokuapp.com${routes.kakaoCallback}`
                 // callbackURL: process.env.PRODUCTION ?
-                //     `https://stormy-hollows-56478.herokuapp.com${routes.kakaoCallbacka}` :
-                //     `http://localhost:4000${routes.kakaoCallbacka}`
+                //     `https://stormy-hollows-56478.herokuapp.com${routes.kakaoCallback}` :
+                //     `http://localhost:4000${routes.kakaoCallback}`
         },
         kakaoLoginCallback
     )
