@@ -123,7 +123,14 @@ const handleTimeDrag = (event) => {
     videoPlayer.currentTime = videoPlayer.duration * event.target.value;
 };
 
+const autoPlay = () => {
+    videoPlayer.play();
+    playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    playInterval();
+}
+
 const init = () => {
+    autoPlay();
     videoPlayer.volume = 0.5;
     playButton.addEventListener("click", handlePlayClick);
     volumeButton.addEventListener("click", handleVolumeClick);

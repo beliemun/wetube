@@ -1,6 +1,6 @@
 mixin videoPlayer(video={})
     .videoPlayer#jsVideoPlayer
-        video(autoplay)
+        video()
             source(src=video.videoFileUrl type="video/mp4")
         .videoPlayer__controls#jsControls
             .videoPlayer__play#jsPlayButton
