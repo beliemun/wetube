@@ -7,7 +7,7 @@ import "./models/User";
 
 dotenv.config();
 
-const PORT = process.env.PRODUCTION ? process.env.MONGO_URL_PROD : process.env.MONGO_URL;
+const PORT = process.env.MONGO_URL_PROD;
 
 const handleListening = () =>
     console.log(`✅ Listening on: ${PORT}`);
