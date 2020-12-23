@@ -51,7 +51,7 @@
         "build:server": "babel src --out-dir build --ignore 'src/assets --ignore 'src/static' --ignore 'webpack.config.js",
         "copyAll": "shx cp -R src/static build && shx cp -R src/views build && shx cp -R src/resources build",
         "build": "npm run build:server && npm run build:assets && npm run copyAll",
-        "start": "set PRODUCTION=true node build/init.js",
+        "start": "SET PRODUCTION=true node build/init.js",
         "prestart": "npm run build"
     },
     "devDependencies": {
