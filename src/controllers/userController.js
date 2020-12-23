@@ -13,6 +13,7 @@ export const postJoin = async(req, res, next) => {
         body: { name, email, password, password2 },
     } = req;
     if (password !== password2) {
+        req.flash("error", "Passwords do not match.");
         res.status(400);
         res.render("join", { pageTitle: "Join" });
     } else {
@@ -25,6 +26,7 @@ export const postJoin = async(req, res, next) => {
             await User.register(user, password);
             next();
         } catch (error) {
+            req.flash("error", "Can`t log-in. Please check your email or password. ");
             console.log(error);
             res.redirect(routes.home);
         }
@@ -38,10 +40,15 @@ export const getLogin = (req, res) => {
 export const postLogin = passport.authenticate("local", {
     failureRedirect: routes.login,
     successRedirect: routes.home,
+    successFlash: "Welcome to NicoTube!",
+    failureFlash: "Can`t log-in. Please check your email or password. "
 });
 
 // passport.js의 Github strategy가 동작.
-export const githubLogin = passport.authenticate("github");
+export const githubLogin = passport.authenticate("github", {
+    successFlash: "Welcome to NicoTube!",
+    failureFlash: "Can`t log-in at this time."
+});
 
 export const githubLoginCallback = async(
     accessToken,
@@ -76,10 +83,14 @@ export const githubLoginCallback = async(
 };
 
 export const postGithubLogin = (req, res) => {
+    req.flash("success", "Welcome to NicoTube!");
     res.redirect(routes.home);
 };
 
-export const kakaoLogin = passport.authenticate("kakao");
+export const kakaoLogin = passport.authenticate("kakao", {
+    successFlash: "Welcome to NicoTube!",
+    failureFlash: "Can`t log-in at this time."
+});
 
 export const kakaoLoginCallback = async(
     accessToken,
@@ -123,10 +134,12 @@ export const kakaoLoginCallback = async(
 }
 
 export const postKakaoLogin = (req, res) => {
+    req.flash("success", "Welcome to NicoTube!");
     res.redirect(routes.home);
 }
 
 export const logout = (req, res) => {
+    req.flash("info", "Logged out, See you again!");
     req.logout(); // passport가 logout 해줌
     res.redirect(routes.home);
 };
@@ -144,6 +157,7 @@ export const userDetail = async(req, res) => {
         const user = await User.findById(id).populate("videos");
         res.render("userDetail", { pageTitle: "Detail", user });
     } catch (error) {
+        req.flash("error", "Sorry! User not found.");
         console.log(error);
         res.redirect(routes.home);
     }
@@ -160,6 +174,7 @@ export const getEditProfile = async(req, res) => {
         }
         res.render("editProfile", { pageTitle: "Edit Profile", user });
     } catch (error) {
+        req.flash("error", "Sorry! User not found.");
         console.log(error);
         res.redirect(routes.home);
     }
@@ -178,6 +193,7 @@ export const postEditProfile = async(req, res) => {
             user.avatarUrl = routes.home + req.file.location;
         }
         user.save();
+        req.flash("success", "Updated your profile successfully.");
         res.redirect(routes.userDetail(id));
     } catch (error) {
         console.log(error);
@@ -209,6 +225,7 @@ export const postChangePassword = (req, res) => {
     } = req;
     try {
         if (newPassword !== confirmPassword) {
+            req.flash("error", "Passwords do not match.");
             res.status(400);
             res.redirect(routes.changePassword(id));
             return;
@@ -216,6 +233,7 @@ export const postChangePassword = (req, res) => {
         req.user.changePassword(password, newPassword);
         res.redirect(routes.myProfile);
     } catch (error) {
+        req.flash("error", "Can`t change password.");
         res.status(400);
         res.redirect(routes.changePassword(id));
     }

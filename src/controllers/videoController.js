@@ -51,6 +51,7 @@ export const postUpload = async(req, res) => {
     });
     req.user.videos.push(newVideo.id);
     req.user.save();
+    req.flash("success", "Uploaded your video successfully.");
     res.redirect(routes.videoDetail(newVideo.id));
 };
 
@@ -96,6 +97,7 @@ export const postEditVideo = async(req, res) => {
 
     try {
         await Video.findOneAndUpdate({ _id: id }, { title, description });
+        req.flash("success", "Updated your video successfully.");
         res.redirect(routes.videoDetail(id));
     } catch (error) {
         res.redirect(routes.home);
