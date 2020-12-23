@@ -38,7 +38,6 @@ const sendCommentToDeleteAPI = (event) => {
 const addComment = (comment, name, avatarUrl, commentId) => {
     const li = document.createElement("li");
     li.classList.add("comment__item");
-    li.addEventListener("click", sendCommentToDeleteAPI);
     li.id = commentId;
 
     const img = document.createElement("img");
@@ -76,12 +75,13 @@ const addComment = (comment, name, avatarUrl, commentId) => {
     buttonDelete.classList.add("comment__delete");
     divCommentText.appendChild(buttonDelete);
     buttonDelete.innerHTML = "X";
+    buttonDelete.addEventListener("click", sendCommentToDeleteAPI);
 
     commentList.prepend(li);
     increaseCommentNumber();
 };
 
-const sendCommentToAddAPI = async (comment, name, avatarUrl) => {
+const sendCommentToAddAPI = async(comment, name, avatarUrl) => {
     const videoId = window.location.href.split("/videos/")[1];
     const response = await axios({
         url: `/api/${videoId}/comment`,
