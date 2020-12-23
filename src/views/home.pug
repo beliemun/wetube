@@ -2,46 +2,46 @@ extends layouts/main
 include mixins/videoBlock
 
 block content
-  .home__container
-    .home__menu
-      include partials/homeMenu
-    .home__content
-      .home-header__img
-        img.home-header-img(src="/resources/channel_image.jpg")
-      .home-header__container
-        .home-header__logo
-          img(src="https://nomadcoders.co/m.svg")
-        .home-header__title 
-          h1.home-header__name 노마드 코더 Nomad Coders
-          h5.home-header__subscription-count 구독자 21.6만명
-        .home-header__subscription-status
-          i.far.fa-bell.fa
-          h5.channel__status-text 구독중
-      .home-menu
-        a.home-menu__home(href="#")
-          span 홈
-        a.home-menu__video(href="#")
-          span 동영상
-        a.home-video-list(href="#")
-          span 재생목록
-        a.home-community(href="#")
-          span 커뮤니티
-        a.home-channel(href="#")
-          span 채널
-        a.home-info(href="#")
-          span 정보
-        a.home-search(href="#")
-          i.fas.fa-search.fa-lg
-      .home-videos
-        .home-videos__latest
-          .home-videos__title
-            h2 업로드한 동영상
-          .home-videos__list
-            each item in videos
-              +videoBlock({
-                id: item.id,
-                title: item.title,
-                views: item.views,
-                videoFile: item.videoFileUrl,
-                posterFile: item.posterFileUrl,
-              })
+    .home__container
+        .home__menu
+            include partials/homeMenu
+        .home__content
+            .home-header__img
+                img.home-header-img(src="/build/resources/channel_image.jpg")
+            .home-header__container
+                .home-header__logo
+                    img(src="https://nomadcoders.co/m.svg")
+                .home-header__title 
+                    h1.home-header__name 노마드 코더 Nomad Coders
+                    h5.home-header__subscription-count 구독자 21.6만명
+                .home-header__subscription-status
+                    i.far.fa-bell.fa
+                    h5.channel__status-text 구독중
+            .home-menu
+                a.home-menu__home(href="#")
+                    span 홈
+                a.home-menu__video(href="#")
+                    span 동영상
+                a.home-video-list(href="#")
+                    span 재생목록
+                a.home-community(href="#")
+                    span 커뮤니티
+                a.home-channel(href="#")
+                    span 채널
+                a.home-info(href="#")
+                    span 정보
+                a.home-search(href="#")
+                    i.fas.fa-search.fa-lg
+            .home-videos
+                .home-videos__latest
+                    .home-videos__title
+                        h2 업로드한 동영상
+                    .home-videos__list
+                        each item in videos
+                            +videoBlock({
+                                id: item.id,
+                                title: item.title,
+                                views: item.views,
+                                videoFile: item.videoFileUrl,
+                                posterFile: item.posterFileUrl,
+                            })

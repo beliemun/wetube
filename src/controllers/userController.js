@@ -2,7 +2,7 @@ import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
 
-const NO_IMAGE = '/src/resources/noimage.png';
+const NO_IMAGE = '/build/resources/noimage.png';
 
 export const getJoin = (req, res) => {
     res.render("join", { pageTitle: "Join" });
